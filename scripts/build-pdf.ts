@@ -72,10 +72,6 @@ function generateStyles(): string {
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 9.5pt;
@@ -85,12 +81,9 @@ body {
 
 .resume {
   width: 8.5in;
-  min-height: 10.5in;
   margin: 0 auto;
   background: var(--bg-color);
   padding: 0.25in 0.4in;
-  display: flex;
-  flex-direction: column;
 }
 
 .header {
@@ -133,7 +126,6 @@ body {
 
 .section:last-child {
   margin-bottom: 0;
-  flex-grow: 1;
 }
 
 .section-title {
@@ -267,13 +259,11 @@ body {
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    height: auto;
   }
   
   .resume {
     padding: 0.25in 0.4in;
     margin: 0;
-    min-height: auto;
   }
   
   .achievements li {
@@ -283,17 +273,21 @@ body {
 }`;
 }
 
-function parseMarkdown(text: string): string {
-  const parsed = marked.parseInline(text);
+async function parseMarkdown(text: string): Promise<string> {
+  const parsed = await marked.parseInline(text);
   return parsed;
 }
 
-function generateHtml(data: Resume): string {
+async function generateHtml(data: Resume): Promise<string> {
   const escapeHtml = (str: string): string => {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   };
 
-  const experienceHtml = data.experience.map(job => `
+  const experienceHtmlPromises = data.experience.map(async job => {
+    const achievementsHtml = await Promise.all(
+      job.achievements.map(async a => `<li>${await parseMarkdown(a)}</li>`)
+    );
+    return `
       <div class="job">
         <div class="job-header">
           <h3 class="company">${escapeHtml(job.company)}</h3>
@@ -301,9 +295,11 @@ function generateHtml(data: Resume): string {
         </div>
         <div class="job-title">${escapeHtml(job.title)}</div>
         <ul class="achievements">
-          ${job.achievements.map(a => `<li>${parseMarkdown(a)}</li>`).join('\n          ')}
+          ${achievementsHtml.join('\n          ')}
         </ul>
-      </div>`).join('\n');
+      </div>`;
+  });
+  const experienceHtml = (await Promise.all(experienceHtmlPromises)).join('\n');
 
   const educationHtml = data.education.map(edu => `
       <div class="education">
@@ -388,7 +384,7 @@ async function buildPdf(resumePath: string): Promise<void> {
   const yamlContent = readFileSync(yamlPath, 'utf8');
   const data = yaml.load(yamlContent) as Resume;
 
-  const html = generateHtml(data);
+  const html = await generateHtml(data);
   const css = generateStyles();
 
   const htmlPath = join(outputDir, 'index.html');
