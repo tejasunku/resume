@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teja Sunku - Resume</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="resume">
+    <header class="header">
+      <h1 class="name">Teja Sunku</h1>
+      <div class="contact-info">
+        <span>Redmond, WA (relocation ok)</span>
+        <span class="separator">|</span>
+        <span>+1 (206) 445-3399</span>
+        <span class="separator">|</span>
+        <span>sunkut@outlook.com</span>
+        <span class="separator">|</span>
+        <span><a href="https://www.linkedin.com/in/tejasunku" target="_blank">LinkedIn</a></span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Summary</h2>
+      <p class="summary">Experienced AI Infrastructure Engineer with strong proficiency in Python and AWS, led the migration of a core LLM routing service to async architecture, significantly enhancing performance. Successfully managed the transition to Kubernetes for improved service orchestration. Draws on substantial data science background, wishing to leverage skills in efficient data management and deployment resilience to drive key infrastructure projects.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="company">Ashvin AI</h3>
+          <span class="dates">Jan 2024 - Jun 2025</span>
+        </div>
+        <div class="job-title">Machine Learning, Operations (ML Ops)</div>
+        <ul class="achievements">
+          <li>Led migration of the core LLM routing service to an async architecture, increasing throughput by 10x without additional compute. Optimized performance by resolving blocking AWS SDK bottlenecks, delivering an additional 3x throughput gain</li>
+          <li>Spearheaded Kubernetes adoption across backend services by converting legacy Python scripts into containerized FastAPI microservices, completing migrations in about 1 week per service. Coordinated cross-functional onboarding to enable same-day deployments and production rollouts, speeding up development</li>
+          <li>Designed a multi-repo integration test suite to validate cross-service dependencies, cutting release-time regressions across shared infrastructure by 50% and improving deployment reliability</li>
+          <li>Built resilient ingestion and export pipelines for medical systems including Brightree, HDMS, and TIMS, normalizing untyped legacy data into structured formats. Enabled same-week integration with clients using these systems, covering over 80% of prospective partners and accelerating onboarding</li>
+          <li>Unified Engineering and DevOps pipelines by redesigning CI/CD processes, cutting container build-to-deploy latency by about 70% through caching and parallelization. Developed a custom FastAPI metric measuring concurrent in-flight requests to replace unreliable CPU/RAM signals and improve Kubernetes autoscaling</li>
+          <li>Mentored junior engineers in debugging, AWS, and command-line best practices, accelerating interns&#39; onboarding and enabling them to independently lead significant feature development within their first month</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <h3 class="company">Cyentia Institute</h3>
+          <span class="dates">Apr 2022 - Jan 2023</span>
+        </div>
+        <div class="job-title">Data Scientist</div>
+        <ul class="achievements">
+          <li>Analyzed datasets of 1 million+ rows to derive actionable insight and generate comprehensive reports, collaborating with Marketing to finetune visualizations</li>
+          <li>Trained and implemented NLP machine learning models using SpaCy and BERT models to augment CVE-related data feeds with key words and phrases, improving data accuracy and relevance</li>
+          <li>Extracted vulnerability descriptions from websites and APIs using R and Python, exporting structured tabular formats to AWS, which enhanced data accessibility and integration for security analysis</li>
+          <li>Enabled reproducible testing environments by creating Docker scripts with detailed documentation, and by constructing AWS test environments and configs for validating pre-production code</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="education">
+        <div class="education-header">
+          <h3 class="school">UC San Diego</h3>
+          <span class="dates">2023 - 2024</span>
+        </div>
+        <div class="degree">Machine Learning Bootcamp</div>
+      </div>
+
+      <div class="education">
+        <div class="education-header">
+          <h3 class="school">University of Idaho</h3>
+          <span class="dates">2017 - 2021</span>
+        </div>
+        <div class="degree">B.S., Statistics &amp; Philosophy</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+
+        <div class="skill-category">
+          <span class="skill-label">Languages:</span>
+          <span class="skill-items">Python, R, SAS, SQL, Bash, Javascript/Typescript</span>
+        </div>
+
+        <div class="skill-category">
+          <span class="skill-label">Tools &amp; Infra:</span>
+          <span class="skill-items">FastAPI, Pytest, AWS, Kubernetes, Github Actions</span>
+        </div>
+
+        <div class="skill-category">
+          <span class="skill-label">ML / Data:</span>
+          <span class="skill-items">Pandas, Pytorch, Tensorflow, scikit-learn, SpaCy, OpenAI API</span>
+        </div>
+
+        <div class="skill-category">
+          <span class="skill-label">Other:</span>
+          <span class="skill-items">Prompt Engineering, CI/CD, Async programming, Documentation and Testing</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
