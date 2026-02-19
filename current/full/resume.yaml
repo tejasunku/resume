@@ -7,7 +7,7 @@ linkedin:
     url: https://www.linkedin.com/in/tejasunku
 
 summary: |
-  Experienced AI Infrastructure Engineer with strong proficiency in Python and AWS, led the migration of a core LLM routing service to async architecture, significantly enhancing performance. Successfully managed the transition to Kubernetes for improved service orchestration. Combines data science expertise with production infrastructure experience to build scalable AI systems.
+  Experienced AI Infrastructure Engineer with strong proficiency in Python and AWS, led the migration of a core LLM routing service to async architecture, significantly enhancing performance. Successfully managed the transition to Kubernetes for improved service orchestration. Draws on substantial data science background, wishing to leverage skills in efficient data management and deployment resilience to drive key infrastructure projects.
 
 experience:
   - company: Tumble (trytumble.app)
@@ -26,8 +26,10 @@ experience:
       - Designed multi-step document processing workflows using multimodal LLMs, converting PDF medical records to images and applying structured extraction/classification rubrics via prompt engineering
       - Evaluated 100+ real customer documents to refine LLM prompts, systematically removing extraction errors and improving output quality; assessed cost/performance tradeoffs across models to optimize for accuracy and latency
       - Spearheaded Kubernetes adoption across backend services by converting legacy Python scripts into containerized FastAPI microservices, completing migrations in about 1 week per service. Coordinated cross-functional onboarding to enable same-day deployments and production rollouts, speeding up development
-      - Redesigned CI/CD pipelines and implemented multi-repo integration testing, cutting build-to-deploy latency by 70% and release-time regressions by 50%
-      - Built resilient data ingestion and export pipelines for legacy systems, normalizing untyped data into structured formats and enabling same-week client integrations
+      - Designed a multi-repo integration test suite to validate cross-service dependencies, cutting release-time regressions across shared infrastructure by 50% and improving deployment reliability
+      - Built resilient ingestion and export pipelines for medical systems including Brightree, HDMS, and TIMS, normalizing untyped legacy data into structured formats. Enabled same-week integration with clients using these systems, covering over 80% of prospective partners and accelerating onboarding
+      - Unified Engineering and DevOps pipelines by redesigning CI/CD processes, cutting container build-to-deploy latency by about 70% through caching and parallelization. Developed a custom FastAPI metric measuring concurrent in-flight requests to replace unreliable CPU/RAM signals and improve Kubernetes autoscaling
+      - Mentored junior engineers in debugging, AWS, and command-line best practices, accelerating interns' onboarding and enabling them to independently lead significant feature development within their first month
 
   - company: Cyentia Institute
     dates: Apr 2022 - Jan 2023
@@ -49,14 +51,16 @@ education:
 
 skills:
   - label: Languages
-    items: Python, SQL (Postgres), Bash, TypeScript
-  - label: Cloud & Infrastructure
-    items: AWS, Kubernetes, Terraform, GitHub Actions, Datadog
+    items: Python, R, SAS, SQL (Postgres), Bash, JavaScript/TypeScript
   - label: ML & AI
-    items: PyTorch, TensorFlow, Keras, scikit-learn, spaCy, Hugging Face, MLflow, OpenAI API
-  - label: Data Science
-    items: pandas, NumPy, Jupyter, Tableau, PowerBI, Databricks
+    items: TensorFlow, PyTorch, Keras, scikit-learn, spaCy, Hugging Face Transformers, LlamaIndex, MLflow, DVC
+  - label: Data Science & Analytics
+    items: pandas, NumPy, Jupyter, Tableau, PowerBI, matplotlib, statsmodels, tidyverse, Spark, Temporal, Dask, Databricks
+  - label: Cloud & Infrastructure
+    items: AWS, GCP, Docker, Kubernetes, Terraform, GitHub Actions, Datadog
   - label: Web & APIs
-    items: FastAPI, Next.js, GraphQL, REST APIs
-  - label: Practices
-    items: CI/CD, Async Programming, Pytest, Documentation & Testing
+    items: FastAPI, React, Next.js, Node.js, GraphQL, gRPC, REST APIs
+  - label: Databases & Storage
+    items: MongoDB, Redis, Elasticsearch
+  - label: Development Practices
+    items: CI/CD, Async programming, Pytest, Documentation and Testing, Prompt Engineering

@@ -1,0 +1,323 @@
+name: Technical Breadth Assessment
+version: 1.0.0
+purpose: >
+  Evaluates whether a resume demonstrates breadth across multiple technical domains.
+  Specifically designed to highlight weaknesses in data science, AI, and ML experience
+  when compared to general software engineering capabilities.
+
+overview: |
+  This scoring sheet assesses coverage across four key technical domains:
+  Data Science, AI/ML, Software Engineering, and Cloud/Infrastructure.
+  A well-rounded technical resume should demonstrate meaningful experience in at least
+  3 of these 4 domains. The AI/ML and Data Science criteria are weighted more heavily
+  (25 points each) to surface gaps in these high-demand areas.
+
+scoring_scale:
+  0: No evidence
+  1: Minimal mention (e.g., single keyword, passing reference)
+  2: Some exposure (e.g., course/project work, basic usage)
+  3: Working knowledge (e.g., professional use, standard applications)
+  4: Significant experience (e.g., multiple projects, production systems)
+  5: Expert-level (e.g., deep specialization, leadership, complex implementations)
+
+domains:
+  - name: Data Science
+    description: Statistical analysis, data manipulation, and data-driven decision making
+    weight: 25
+    max_points: 25
+    criteria:
+      - name: Data Manipulation & Analysis
+        description: Experience with data processing, cleaning, and exploratory analysis
+        what_to_look_for:
+          - pandas, NumPy, R, SQL for data analysis
+          - Data wrangling, cleaning, transformation
+          - Exploratory data analysis (EDA) techniques
+          - Statistical analysis and hypothesis testing
+          - Data visualization (matplotlib, seaborn, ggplot, Tableau)
+        scoring:
+          0: No data analysis tools or techniques mentioned
+          1: Basic SQL queries only
+          2: Basic pandas/NumPy usage mentioned
+          3: Professional data analysis work with clear outcomes
+          4: Complex data pipelines or large-scale analysis
+          5: Advanced statistical modeling or data science leadership
+
+      - name: Data Pipeline & ETL
+        description: Building data pipelines and ETL processes
+        what_to_look_for:
+          - ETL/ELT tools (Airflow, dbt, Spark)
+          - Data warehouse experience (Snowflake, BigQuery, Redshift)
+          - Data pipeline architecture
+          - Data quality and validation
+          - Batch and streaming data processing
+        scoring:
+          0: No pipeline or ETL experience
+          1: Basic database queries only
+          2: Simple data movement or transformation
+          3: Production ETL pipeline development
+          4: Complex multi-stage data architecture
+          5: Data platform or infrastructure leadership
+
+  - name: AI / Machine Learning
+    description: Machine learning model development, training, and deployment
+    weight: 25
+    max_points: 25
+    criteria:
+      - name: ML Model Development
+        description: Building and training machine learning models
+        what_to_look_for:
+          - ML frameworks (scikit-learn, TensorFlow, PyTorch, XGBoost)
+          - Model training, validation, and testing
+          - Feature engineering and selection
+          - Supervised and unsupervised learning
+          - Deep learning or neural networks
+          - Model evaluation metrics and performance
+        scoring:
+          0: No ML frameworks or model development mentioned
+          1: Academic coursework or tutorials only
+          2: Basic model training with simple algorithms
+          3: Production ML model development
+          4: Complex models (deep learning, ensemble methods)
+          5: Novel architectures or ML research contributions
+
+      - name: AI Integration & Application
+        description: Applying AI/ML to solve business problems
+        what_to_look_for:
+          - Integration of ML models into applications
+          - AI-powered features (recommendations, predictions, NLP)
+          - API usage (OpenAI, Anthropic, Hugging Face)
+          - Prompt engineering for LLMs
+          - MLOps and model serving
+          - Real-world AI impact and outcomes
+        scoring:
+          0: No AI application or integration experience
+          1: Basic API usage (e.g., simple ChatGPT calls)
+          2: AI features in personal/side projects
+          3: Production AI features with measurable impact
+          4: Complex AI systems or multi-model pipelines
+          5: AI product leadership or breakthrough applications
+
+  - name: Software Engineering
+    description: Core software development and engineering practices
+    weight: 20
+    max_points: 20
+    criteria:
+      - name: Programming & Architecture
+        description: Coding skills and system design
+        what_to_look_for:
+          - Multiple programming languages (Python, JavaScript, Go, Java, etc.)
+          - System architecture and design patterns
+          - API development (REST, GraphQL)
+          - Database design and management
+          - Code quality and testing practices
+          - Performance optimization
+        scoring:
+          0: No programming or architecture evidence
+          1: Single language, basic scripting
+          2: Standard application development
+          3: Multi-service architecture or complex systems
+          4: Large-scale system design
+          5: Architectural leadership or framework development
+
+      - name: Development Practices
+        description: Engineering workflows and collaboration
+        what_to_look_for:
+          - Version control (Git, GitHub, GitLab)
+          - CI/CD pipelines and DevOps practices
+          - Code review and testing
+          - Agile/Scrum methodologies
+          - Documentation and technical writing
+          - Collaboration and team leadership
+        scoring:
+          0: No development practices mentioned
+          1: Basic Git usage only
+          2: Standard team development practices
+          3: Strong engineering culture contribution
+          4: DevOps or process improvement leadership
+          5: Engineering team or practice transformation
+
+  - name: Cloud & Infrastructure
+    description: Cloud platforms, infrastructure, and DevOps
+    weight: 15
+    max_points: 15
+    criteria:
+      - name: Cloud Platforms & Services
+        description: Cloud infrastructure and managed services
+        what_to_look_for:
+          - AWS, GCP, Azure experience
+          - Serverless (Lambda, Cloud Functions)
+          - Containerization (Docker, Kubernetes)
+          - Infrastructure as Code (Terraform, CloudFormation)
+          - Monitoring and observability
+          - Security and compliance practices
+        scoring:
+          0: No cloud or infrastructure experience
+          1: Basic cloud service usage
+          2: Multiple services, standard configurations
+          3: Complex cloud architecture
+          4: Multi-cloud or enterprise infrastructure
+          5: Cloud architecture leadership or platform engineering
+
+  - name: Domain Expertise
+    description: Specialized knowledge in a specific industry or technology area
+    weight: 15
+    max_points: 15
+    criteria:
+      - name: Specialized Domain Knowledge
+        description: Deep expertise in a particular domain
+        what_to_look_for:
+          - Industry-specific technologies (fintech, healthtech, etc.)
+          - Specialized tools (blockchain, embedded, mobile, etc.)
+          - Domain-specific problem solving
+          - Regulatory or compliance knowledge
+          - Research or academic contributions
+          - Open source contributions or community involvement
+        scoring:
+          0: No domain specialization evident
+          1: Basic industry exposure
+          2: Some domain-specific work
+          3: Strong domain expertise
+          4: Recognized domain authority
+          5: Industry thought leadership or innovation
+
+scoring_interpretation:
+  90-100:
+    label: Exceptional Breadth
+    description: Strong coverage across all 4 domains with depth in at least 2
+    characteristics:
+      - "Clear evidence of Data Science + AI/ML + Software Engineering + Cloud"
+      - "Production ML systems with measurable impact"
+      - "Well-rounded technical leader"
+
+  70-89:
+    label: Strong Breadth
+    description: Solid coverage across 3+ domains with strength in weighted areas
+    characteristics:
+      - "Good Data Science or AI/ML evidence (may be missing one)"
+      - "Strong Software Engineering foundation"
+      - "Minor gaps in specific sub-domains"
+
+  50-69:
+    label: Moderate Breadth
+    description: Adequate coverage with noticeable gaps
+    characteristics:
+      - "Likely missing Data Science or AI/ML depth"
+      - "Strong in 2 domains, weak in others"
+      - "May appear as pure software engineer without ML/DS"
+
+  30-49:
+    label: Limited Breadth
+    description: Significant gaps across multiple domains
+    characteristics:
+      - "Missing both Data Science and AI/ML evidence"
+      - "Single-domain specialist"
+      - "May need explicit DS/AI/ML upskilling narrative"
+
+  0-29:
+    label: Narrow Specialization
+    description: Very limited technical breadth
+    characteristics:
+      - "Evidence in only 1-2 domains"
+      - "No ML/DS/AI keywords or projects"
+      - "Requires substantial content additions"
+
+red_flags:
+  - description: No ML/AI keywords whatsoever
+    impact: -20 points
+    notes: Resume reads as traditional software engineer with no AI exposure
+
+  - description: No data analysis or statistics evidence
+    impact: -15 points
+    notes: Missing pandas, NumPy, SQL, or any data manipulation tools
+
+  - description: Generic "AI" claims without specifics
+    impact: -10 points
+    notes: Mentions "AI" but no frameworks, models, or outcomes specified
+
+  - description: Only coursework/bootcamp ML experience
+    impact: -5 points
+    notes: Real-world production ML experience missing
+
+recommendations_for_improvement:
+  data_science:
+    - "Add specific data analysis projects with quantified outcomes"
+    - "Include pandas, NumPy, SQL with specific use cases"
+    - "Mention data visualization tools and insights delivered"
+    - "Highlight statistical analysis or A/B testing experience"
+
+  ai_ml:
+    - "Add ML framework experience (scikit-learn, TensorFlow, PyTorch)"
+    - "Describe specific models built and problems solved"
+    - "Include AI API integration (OpenAI, Hugging Face)"
+    - "Quantify ML impact (accuracy improvements, predictions, automation)"
+    - "Mention prompt engineering or LLM application"
+
+  software_engineering:
+    - "Ensure programming languages are current and relevant"
+    - "Highlight system design or architecture decisions"
+    - "Include API development and integration experience"
+
+  cloud_infrastructure:
+    - "List cloud platforms and specific services used"
+    - "Mention containerization or orchestration experience"
+    - "Include CI/CD or infrastructure automation"
+
+keywords_checklist:
+  data_science:
+    - pandas
+    - NumPy
+    - SQL
+    - data analysis
+    - EDA
+    - statistics
+    - data visualization
+    - matplotlib
+    - seaborn
+    - Tableau
+    - ETL
+    - data pipeline
+    - exploratory data analysis
+
+  ai_ml:
+    - machine learning
+    - ML
+    - AI
+    - artificial intelligence
+    - deep learning
+    - neural networks
+    - TensorFlow
+    - PyTorch
+    - scikit-learn
+    - XGBoost
+    - model training
+    - prediction
+    - classification
+    - regression
+    - NLP
+    - natural language processing
+    - LLM
+    - large language model
+    - OpenAI
+    - Hugging Face
+    - prompt engineering
+    - fine-tuning
+    - MLOps
+
+  cloud:
+    - AWS
+    - GCP
+    - Azure
+    - Docker
+    - Kubernetes
+    - serverless
+    - Lambda
+    - Terraform
+    - CI/CD
+
+metadata:
+  created_for: "Resume breadth evaluation - highlighting Data Science/AI/ML gaps"
+  weighted_domains:
+    - Data Science (25 points)
+    - AI/ML (25 points)
+  total_possible_points: 100
+  last_updated: "2026-02-18"

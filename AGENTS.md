@@ -17,7 +17,11 @@ Resume builder that converts YAML resumes to HTML/CSS and PDF using TypeScript, 
 │   ├── build-pdf.ts      # Generates HTML/CSS/PDF from YAML
 │   └── check-pages.ts    # Validates PDF is <= 1 page
 ├── current/              # Resume versions (each subfolder is a resume)
-│   └── main/
+│   ├── full/             # Complete work history - source of truth (can be >1 page)
+│   │   ├── README.md     # Full resume documentation
+│   │   ├── resume.yaml   # Complete unabridged resume
+│   │   └── output/       # Generated files (HTML, CSS, PDF)
+│   └── main/             # Primary 1-page resume for broad appeal
 │       ├── README.md     # Description of the resume's purpose/target role
 │       ├── resume.yaml   # Resume content (edit this)
 │       └── output/       # Generated files (index.html, styles.css, resume.pdf)
@@ -159,6 +163,33 @@ Defined in CSS variables:
 2. Create `resume.yaml` with content
 3. Add npm scripts to `package.json`
 4. Run: `npm run build:<name> && npm run check:<name>`
+
+## Full Resume Maintenance
+
+The `current/full/` directory contains the **complete, unabridged work history** - the source of truth for all other resume versions.
+
+### Agent Guidelines
+
+When working with resume content:
+- **Never modify** `current/full/resume.yaml` without explicit user approval
+- **Always prompt** the user to update the full resume when changes are made to other versions
+
+### Prompt Template
+
+After completing work on any resume variant, ask the user:
+
+> "I've finished updating `current/<name>/resume.yaml`. Would you like me to also add these changes to `current/full/resume.yaml` to keep the complete history up to date?"
+
+### What to Sync
+
+When updating the full resume, ensure these are captured:
+- New work experience entries
+- Updated achievements or responsibilities
+- New skills or technologies
+- Modified education or certifications
+- New projects or accomplishments
+
+This maintains the full resume as the authoritative archive that other targeted resumes draw from.
 
 ## Resume Scoring Agents
 
