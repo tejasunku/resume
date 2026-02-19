@@ -12,13 +12,27 @@ Resume builder that converts YAML resumes to HTML/CSS and PDF using TypeScript, 
 /resume/
 ├── package.json          # Dependencies and npm scripts
 ├── tsconfig.json         # TypeScript configuration (ES2022, ESNext, strict mode)
+├── AGENTS.md             # This file - guidelines for AI agents
 ├── scripts/
 │   ├── build-pdf.ts      # Generates HTML/CSS/PDF from YAML
 │   └── check-pages.ts    # Validates PDF is <= 1 page
 ├── current/              # Resume versions (each subfolder is a resume)
 │   └── main/
+│       ├── README.md     # Description of the resume's purpose/target role
 │       ├── resume.yaml   # Resume content (edit this)
 │       └── output/       # Generated files (index.html, styles.css, resume.pdf)
+├── scoring_sheets/       # Resume evaluation rubrics (created by agents)
+├── private/
+│   └── example_resumes/  # Example resumes for scoring development
+│       └── <role>/
+│           ├── resume.yaml
+│           ├── critique.md
+│           ├── well-done.md
+│           └── scoring-result.md
+├── .opencode/
+│   └── agents/           # Custom opencode agent definitions
+│       ├── resume-scoring-sheet.md
+│       └── resume-scorer.md
 └── old_resumes/          # Reference materials
 ```
 
@@ -145,6 +159,41 @@ Defined in CSS variables:
 2. Create `resume.yaml` with content
 3. Add npm scripts to `package.json`
 4. Run: `npm run build:<name> && npm run check:<name>`
+
+## Resume Scoring Agents
+
+This project uses custom opencode agents for resume evaluation:
+
+### Available Agents
+
+1. **@resume-scoring-sheet** - Creates scoring rubrics for specific roles
+2. **@resume-scorer** - Evaluates resumes against scoring sheets
+
+### Usage Examples
+
+**Create a scoring sheet:**
+```
+@resume-scoring-sheet Create a scoring sheet for senior software engineering resumes
+```
+
+**Score your resume:**
+```
+@resume-scorer Score current/main/resume.yaml against scoring_sheets/software-engineer-senior.yaml
+```
+
+**Use example resumes for reference:**
+```
+@resume-scoring-sheet Create a scoring sheet for product management resumes, using examples from private/example_resumes/pm/
+```
+
+### Folder Conventions
+
+- **scoring_sheets/** - Store all scoring rubrics here (YAML or Markdown)
+- **private/example_resumes/**<role>/ - Store example resumes with:
+  - `resume.yaml` or `resume.pdf` - the resume file
+  - `critique.md` - detailed issues found
+  - `well-done.md` - strengths and positive aspects
+  - `scoring-result.md` - generated scoring results
 
 ## Notes
 
