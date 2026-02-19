@@ -7,7 +7,7 @@ linkedin:
     url: https://www.linkedin.com/in/tejasunku
 
 summary: |
-  Experienced AI Infrastructure Engineer with strong proficiency in Python and AWS, led the migration of a core LLM routing service to async architecture, significantly enhancing performance. Successfully managed the transition to Kubernetes for improved service orchestration. Combines data science expertise with production infrastructure experience to build scalable AI systems.
+  Experienced AI Infrastructure Engineer with strong proficiency in Python and AWS, led the migration of a core LLM routing service to async architecture, enhancing performance. Managed the transition to Kubernetes for improved service orchestration. Combines data science expertise with production infrastructure experience to build scalable AI systems.
 
 experience:
   - company: Tumble (trytumble.app)
@@ -26,7 +26,7 @@ experience:
       - Designed multi-step document processing workflows using multimodal LLMs, converting PDF medical records to images and applying structured extraction/classification rubrics via prompt engineering
       - Evaluated 100+ real customer documents to refine LLM prompts, systematically removing extraction errors and improving output quality; assessed cost/performance tradeoffs across models to optimize for accuracy and latency
       - Spearheaded Kubernetes adoption across backend services by converting legacy Python scripts into containerized FastAPI microservices, completing migrations in about 1 week per service. Coordinated cross-functional onboarding to enable same-day deployments and production rollouts, speeding up development
-      - Redesigned CI/CD pipelines and implemented multi-repo integration testing, cutting build-to-deploy latency by 70% and release-time regressions by 50%
+      - Redesigned CI/CD pipelines and implemented multi-repo integration testing, cutting build-to-deploy latency from ~10 minutes to under 3 minutes
       - Built resilient data ingestion and export pipelines for legacy systems, normalizing untyped data into structured formats and enabling same-week client integrations
 
   - company: Cyentia Institute

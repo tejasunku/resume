@@ -1,0 +1,661 @@
+name: Bullshit Detector
+version: 1.0.0
+purpose: >
+  Evaluates professional communication (resumes, cover letters, LinkedIn profiles,
+  portfolio descriptions, etc.) for indicators of "bullshit" - communication that
+  prioritizes impression over truth, appearance over substance, and rhetorical
+  performance over factual accuracy. Based on philosophical analysis of communication
+  that is indifferent to truth-value.
+
+philosophical_foundation: |
+  This scoring sheet evaluates professional communication against principles derived
+  from philosophical analysis of communication that lacks concern for truth. Unlike
+  lying (which opposes truth) or honest mistakes (which attempt truth), this form
+  of communication simply ignores truth entirely. It prioritizes:
+  
+  - Rhetorical effect over factual accuracy
+  - Self-presentation over genuine capability
+  - Sophisticated form over meaningful substance
+  - Convenient narrative over actual circumstances
+  
+  The detector looks for signals that the communicator is more concerned with
+  creating an impression than with accurately representing reality.
+
+overview: |
+  The Bullshit Detector scores professional communication across 8 core principles,
+  each with specific behavioral indicators and severity levels. Communication that
+  scores highly on these indicators suggests the communicator is indifferent to
+  whether their statements correspond with reality.
+  
+  This is NOT a lie detector. It specifically identifies communication where truth
+  and falsehood are simply irrelevant to the communicator's goals.
+
+scoring_scale:
+  0: No evidence detected
+  1: Minimal concern (occasional lapses, likely unintentional)
+  2: Moderate concern (noticeable pattern, some intentional)
+  3: Significant concern (frequent occurrences, clearly strategic)
+  4: Severe concern (pervasive pattern, dominant approach)
+  5: Extreme concern (communication is primarily performative, truth entirely absent)
+
+principles:
+  - name: Indifference to Truth
+    description: |
+      The communicator is unconcerned with whether statements are true or false;
+      truth-value is irrelevant to their purpose. They are not lying (which requires
+      knowing truth to oppose it), but simply don't care about truth at all.
+    weight: 20
+    max_points: 20
+    indicators:
+      - name: Factual Anachronisms
+        description: Attributing later achievements or technologies to earlier time periods
+        what_to_look_for:
+          - "Led AI initiatives" in 2015 (before widespread practical AI adoption)
+          - "Built microservices architecture" in a company that only adopted them later
+          - "Implemented cloud-native solutions" predating mainstream cloud adoption
+          - Technologies listed before they were released or widely adopted
+        scoring:
+          0: All dates and technologies align correctly with historical context
+          1: 1-2 minor anachronisms (possibly unintentional)
+          2: 3-5 noticeable misalignments suggesting carelessness
+          3: Clear pattern of backdating achievements or technologies
+          4: Multiple significant anachronisms (e.g., "AI expert" in pre-LLM era)
+          5: Resume is essentially a timeline impossibility (fantasy fiction)
+
+      - name: Unverifiable Grandiosity
+        description: Claims so vague or absolute that they cannot be fact-checked
+        what_to_look_for:
+          - "First person to..." without any verifiable reference
+          - "Revolutionized the industry" with no supporting metrics or citations
+          - "Pioneered" used for standard practices adopted by everyone
+          - "Only expert in..." claims in widely populated fields
+          - "Changed the way company X operates" without specific mechanism
+        scoring:
+          0: All claims are specific, measurable, and verifiable
+          1: 1-2 vague superlatives ("significant contributor")
+          2: Multiple absolute claims lacking evidence ("first", "only", "revolutionary")
+          3: Pattern of unverifiable grandiosity across multiple entries
+          4: Most achievements are framed as unprecedented or world-changing
+          5: Every claim is maximal hyperbole with zero verifiable specifics
+
+      - name: Contradictory Expertise
+        description: Claims expertise in mutually exclusive or contradictory domains
+        what_to_look_for:
+          - "Expert in both waterfall and agile" without acknowledging tensions
+          - "Deep specialization" in 15+ unrelated technologies
+          - "Thought leader" in fields that directly oppose each other
+          - Claims of being "full-stack" across 8+ distinct specialties simultaneously
+          - "Master of" highly divergent methodologies without synthesis explanation
+        scoring:
+          0: Expertise claims are coherent and realistically compatible
+          1: 1-2 unrelated skills (reasonable for senior generalists)
+          2: 3-5 contradictory or mutually exclusive claims
+          3: Clear pattern of claiming expertise in opposing approaches
+          4: Resume suggests expertise in everything (impossible scope)
+          5: Claims violate basic logical or domain constraints
+
+  - name: Lack of Factual Constraint
+    description: |
+      Communication occurs without being constrained by how things actually are;
+      statements are chosen for convenience, rhetorical effect, or impression
+      management rather than accuracy.
+    weight: 15
+    max_points: 15
+    indicators:
+      - name: Inflated Role Titles
+        description: Using titles that misrepresent actual responsibilities or level
+        what_to_look_for:
+          - "Senior Engineer" for junior roles with no senior responsibilities
+          - "Lead" or "Principal" without team management or architectural scope
+          - "Founder" for side projects that never launched
+          - "CTO" of one-person consultancies or shell companies
+          - Title inflation beyond industry-standard scope for that role
+        scoring:
+          0: Titles accurately reflect industry-standard scope and responsibilities
+          1: 1 slight inflation (e.g., "lead" for informal mentoring)
+          2: 2-3 inflated titles that don't match described responsibilities
+          3: Pattern of title inflation across multiple positions
+          4: Most titles are 1-2 levels inflated vs. actual duties described
+          5: Titles are completely disconnected from any actual work performed
+
+      - name: Metric Manipulation
+        description: Cherry-picking, inflating, or fabricating metrics
+        what_to_look_for:
+          - Percentage improvements without baseline numbers ("200% increase" from 1 to 3)
+          - Revenue claims that don't align with company size or role scope
+          - "Saved $X million" without explaining methodology or verification
+          - "Grew team by 500%" (from 1 person to 5 people)
+          - Metrics presented without context that make them meaningless
+          - Confusing correlation with causation ("revenue grew 50% while I was there")
+        scoring:
+          0: All metrics are contextualized, verifiable, and honestly presented
+          1: 1-2 metrics lack baseline context but seem directionally accurate
+          2: Multiple suspicious metrics with clear manipulation patterns
+          3: Pattern of using percentage tricks or misleading comparisons
+          4: Most metrics are cherry-picked or decontextualized to impress
+          5: Metrics are clearly fabricated or mathematically impossible
+
+      - name: Responsibility Drift
+        description: Claiming credit for others' work or organizational achievements
+        what_to_look_for:
+          - "Built the platform" when only worked on one small component
+          - "Led the acquisition" when only prepared one spreadsheet
+          - "Designed the architecture" when only implemented a small service
+          - "Grew revenue to $100M" as an individual contributor in a 1000-person company
+          - Individual "I" statements for clearly team-based achievements
+        scoring:
+          0: Clear distinction between individual and team contributions
+          1: 1-2 ambiguous phrasings that might overclaim
+          2: Multiple instances of individual credit for team outcomes
+          3: Clear pattern of absorbing team/organizational achievements
+          4: Consistent misattribution of collective work as personal
+          5: Entire resume is team achievements presented as solo heroics
+
+  - name: Context Fabrication
+    description: |
+      Rather than adjusting specific falsehoods to fit truths, entire contexts
+      are constructed or misrepresented. The reality of situations is rewritten
+      to create a more favorable narrative.
+    weight: 15
+    max_points: 15
+    indicators:
+      - name: Phantom Achievements
+        description: Describing work that wasn't actually performed or completed
+        what_to_look_for:
+          - "Led initiative to..." that was cancelled or never shipped
+          - "Built system that..." that was never deployed or was abandoned
+          - "Architected solution..." that exists only in documentation
+          - "Spearheaded project" that never left planning phase
+          - Achievements described in future tense or aspirational language
+        scoring:
+          0: All described work was actually completed and deployed
+          1: 1-2 aspirational projects presented ambiguously
+          2: Multiple projects described as "led" that were never delivered
+          3: Clear pattern of claiming credit for unfinished or failed work
+          4: Most achievements are phantom projects that never shipped
+          5: Resume describes a parallel universe of completed work that never existed
+
+      - name: Organizational Misrepresentation
+        description: Mischaracterizing company context, size, or impact
+        what_to_look_for:
+          - Describing tiny startups as "rapidly scaling unicorns"
+          - Claiming "enterprise-scale" work at companies with <50 employees
+          - "Global organization" for companies with 1 international client
+          - "Fortune 500 experience" from being a contractor at a subsidiary
+          - Misrepresenting company stage (pre-seed as "Series C")
+        scoring:
+          0: Accurate representation of company context and scale
+          1: Slight puffery about company growth stage
+          2: 2-3 clear misrepresentations of organizational context
+          3: Pattern of inflating company size, stage, or importance
+          4: Consistent mischaracterization of every company context
+          5: Every company description is fundamentally disconnected from reality
+
+      - name: Timeline Compression/Dilation
+        description: Manipulating duration of experiences to appear more impressive
+        what_to_look_for:
+          - 6-month projects described as "2-year initiatives"
+          - Overlapping dates that are mathematically impossible
+          - "Concurrent" full-time roles that would require 200% time
+          - Employment gaps hidden through date manipulation
+          - "Years of experience" counted from first tutorial, not professional work
+        scoring:
+          0: All dates are accurate and mathematically possible
+          1: 1-2 minor date discrepancies (possibly formatting errors)
+          2: Multiple instances of timeline manipulation
+          3: Clear pattern of date stretching or impossible overlaps
+          4: Major timeline fabrications that would require time travel
+          5: Resume describes a physically impossible career timeline
+
+  - name: Misrepresentation of Intent
+    description: |
+      The communicator falsely presents themselves as attempting to communicate
+      truth, when truth-seeking is not their actual goal. They adopt the form
+      of honest communication while pursuing different objectives.
+    weight: 15
+    max_points: 15
+    indicators:
+      - name: Performative Sincerity
+        description: Overly emotional or earnest language that signals calculation
+        what_to_look_for:
+          - "Passionate about" used 5+ times in a technical resume
+          - "Deeply committed to" every buzzword in the job description
+          - Excessive use of "truly," "genuinely," "authentically"
+          - "Calling" or "mission" language for standard career progression
+          - Forced vulnerability ("I failed at X but it taught me..." as manipulation)
+        scoring:
+          0: Professional tone, motivations stated matter-of-factly
+          1: 1-2 earnest phrases that might be genuine
+          2: Multiple performative sincerity markers
+          3: Clearly calculated emotional appeals throughout
+          4: Every statement seems focus-grouped for maximum emotional impact
+          5: Document reads like a parody of authentic communication
+
+      - name: False Modesty
+        description: Strategic self-deprecation designed to impress
+        what_to_look_for:
+          - "Humble beginnings" stories that lead to impressive outcomes
+          - "Just a" construction ("Just a small-town developer who...")
+          - "Lucky to have" worked at prestigious companies (false attributional shift)
+          - "Still learning" when claiming expert-level achievements
+          - Self-criticism that actually highlights impressive traits
+        scoring:
+          0: Genuine humility or straightforward confidence without games
+          1: 1-2 potentially genuine humble statements
+          2: Multiple instances of strategic self-deprecation
+          3: Clear pattern of false modesty as impression management
+          4: Every modest statement is a setup for a humblebrag
+          5: Document is entirely composed of calculated false humility
+
+      - name: Authenticity Theater
+        description: Conspicuous displays of "authenticity" that are clearly staged
+        what_to_look_for:
+          - "Keeping it real" or "telling it like it is" clichés
+          - "Not your typical" claims that use the typical buzzwords
+          - Mentioning unconventional hobbies to seem interesting ("underwater basket weaving")
+          - "What makes me different" sections that are completely generic
+          - "Vulnerable" stories that are suspiciously polished and on-brand
+        scoring:
+          0: Genuine personality comes through naturally, no performance
+          1: 1-2 potentially authentic personal touches
+          2: Multiple staged "authenticity" markers
+          3: Clear pattern of conspicuous authentic self-presentation
+          4: Entire personal brand is obviously manufactured
+          5: Document is a masterclass in inauthentic authenticity signaling
+
+  - name: Sophistication vs. Authenticity
+    description: |
+      Carefully crafted, polished presentation can coexist with lack of substance.
+      High production values may mask vacuous content.
+    weight: 10
+    max_points: 10
+    indicators:
+      - name: Buzzword Saturation
+        description: Heavy use of fashionable terminology without clear meaning
+        what_to_look_for:
+          - "Leveraged synergy" with no explanation of what was actually done
+          - "Disruptive innovation" for incremental improvements
+          - "Paradigm shift" with no description of what changed
+          - "Thought leadership" as a self-awarded title
+          - Every sentence contains 2+ buzzwords with no concrete referent
+        scoring:
+          0: Clear, specific language with minimal jargon
+          1: 1-2 industry-standard terms used appropriately
+          2: Noticeable buzzword density, some lack meaning
+          3: High buzzword count, many are filler without substance
+          4: Document is essentially a buzzword Mad Lib
+          5: Could be a randomly generated corporate word salad
+
+      - name: Formatting Over Content
+        description: Excessive attention to visual presentation over substance
+        what_to_look_for:
+          - Elaborate design with very little actual content
+          - Multiple fonts, colors, graphics for minimal information
+          - Infographics that don't convey meaningful data
+          - Charts and graphs for information better stated in text
+          - "Designed by" credit on resume (meta-performance)
+        scoring:
+          0: Clean, professional formatting that serves content
+          1: Slightly elaborate design but still content-forward
+          2: Design elements sometimes distract from thin content
+          3: Clearly more effort on appearance than substance
+          4: Resume is essentially an art piece with minimal information
+          5: Maximum visual polish, virtually no actual content
+
+      - name: Template Reliance
+        description: Following trendy formats without adapting to actual experience
+        what_to_look_for:
+          - "Skills matrix" with arbitrary ratings ("Python: 4/5 stars")
+          - "Personal brand statement" that could apply to anyone
+          - "Core competencies" section with 20+ identical-sounding skills
+          - Exactly mimicking LinkedIn "featured" or "about" section formats
+          - Using formats designed for different industries/roles without modification
+        scoring:
+          0: Format clearly adapted to individual experience and industry
+          1: Uses some standard sections but customized appropriately
+          2: Noticeable template reliance with minor customizations
+          3: Heavy template use with poor fit to actual experience
+          4: Resume is clearly a template with names swapped
+          5: Could be an AI-generated template with no human customization
+
+  - name: Greater Harm than Deception
+    description: |
+      Unlike deliberate falsehood which at least acknowledges truth as an authority
+      to oppose, this form of communication simply ignores truth entirely. The
+      absence of truth-concern is more corrosive than active opposition to truth.
+    weight: 10
+    max_points: 10
+    indicators:
+      - name: Epistemic Carelessness
+        description: Pattern of statements that show no concern for accuracy
+        what_to_look_for:
+          - Spelling errors in claimed areas of expertise
+          - Wrong terminology for stated specialization ("I programmed in HTML")
+          - Dated concepts presented as cutting-edge ("Web 2.0 expert" in 2025)
+          - Technical impossibilities ("encrypted with MD5")
+          - Domain errors that reveal no actual expertise
+        scoring:
+          0: Technical accuracy appropriate to claimed expertise level
+          1: 1-2 minor errors (possibly typos)
+          2: Multiple errors showing carelessness
+          3: Clear pattern of not knowing what you're talking about
+          4: Extensive errors suggesting no actual domain knowledge
+          5: Document reveals zero understanding of claimed expertise
+
+      - name: Absence of Correction Mechanism
+        description: No evidence of self-correction or acknowledgment of limitations
+        what_to_look_for:
+          - No mention of failed projects, only successes
+          - "Always delivered on time" in field where delays are inevitable
+          - "Exceeded expectations" on every single project
+          - No learning from mistakes or negative outcomes
+          - Implies perfect record over entire career
+        scoring:
+          0: Appropriate balance of successes and learning moments
+          1: Generally positive but not unrealistically so
+          2: Overwhelmingly positive with no negative outcomes mentioned
+          3: No hint of any project not being a complete success
+          4: Document suggests superhero-level infallibility
+          5: Communicator appears incapable of admitting any imperfection
+
+  - name: Empty Substance
+    description: |
+      Communication that has the form of informative content but lacks actual
+      meaningful substance. Like "hot air" - voluminous but empty.
+    weight: 10
+    max_points: 10
+    indicators:
+      - name: Tautological Statements
+        description: Statements that say nothing beyond their own assertion
+        what_to_look_for:
+          - "Successfully completed successful projects"
+          - "Responsible for responsibilities related to..."
+          - "Utilized utilization of tools to..."
+          - "Worked on work related to working..."
+          - Sentences that can be reduced to "Did things related to doing things"
+        scoring:
+          0: Every sentence conveys specific, non-redundant information
+          1: 1-2 slightly redundant phrases
+          2: Multiple tautological constructions
+          3: Clear pattern of empty recursive statements
+          4: Most sentences are circular or self-referential
+          5: Entire document is linguistic Escher drawing
+
+      - name: Content-Free Achievement Bullets
+        description: Achievement descriptions that don't describe achievements
+        what_to_look_for:
+          - "Participated in team meetings" as an achievement
+          - "Attended training sessions on..." (not conducting them)
+          - "Collaborated with cross-functional teams" (without saying what was done)
+          - "Contributed to" with no description of contribution
+          - Bullet points that only describe job responsibilities, not impact
+        scoring:
+          0: Each bullet clearly states what was accomplished and impact
+          1: 1-2 weak bullets but mostly substantive
+          2: Multiple content-free achievement descriptions
+          3: Many bullets describe activities, not accomplishments
+          4: Almost no actual achievements described
+          5: Resume lists attendance records and participation trophies
+
+      - name: High Word Count, Low Information
+        description: Extensive text that conveys minimal actual meaning
+        what_to_look_for:
+          - 500+ words in summary that could be reduced to 50
+          - Paragraphs of text with no specific facts or figures
+          - Elaborate descriptions that don't advance understanding
+          - Sentences that say the same thing 3 different ways
+          - Length without density
+        scoring:
+          0: Concise, information-dense communication
+          1: Slightly verbose but generally efficient
+          2: Noticeable padding and repetition
+          3: High verbosity with low information transfer
+          4: Most text could be eliminated without loss of meaning
+          5: Document is voluminous hot air
+
+  - name: Performative Authenticity
+    description: |
+      Focusing on appearing sincere or "true to oneself" rather than being
+      accurate about facts. Prioritizing the performance of authenticity over
+      the substance of truthful representation.
+    weight: 5
+    max_points: 5
+    indicators:
+      - name: Brand-First Identity
+        description: Defining self through marketable persona rather than actual work
+        what_to_look_for:
+          - "Personal brand" emphasized over actual skills
+          - "I am a [trendy label] who..." rather than "I do [specific things]"
+          - Identity categories from job postings rather than self-description
+          - "As a [demographic] professional in [industry]..."
+          - Self-definition changes to match each job application exactly
+        scoring:
+          0: Identity emerges naturally from described work and achievements
+          1: Mild branding language but still grounded in reality
+          2: Noticeable brand-first presentation
+          3: Clear pattern of marketable persona over authentic identity
+          4: Resume is essentially a product pitch for a personal brand
+          5: No authentic self detectable beneath the brand layers
+
+      - name: Values Signaling
+        description: Conspicuous declaration of values without evidence
+        what_to_look_for:
+          - "Driven by purpose" without stated purpose
+          - "Values-driven" with no values listed
+          - "Committed to excellence" with no excellence demonstrated
+          - "Passionate about [whatever job requires]"
+          - Values statements that exactly match company mission statements
+        scoring:
+          0: Values evident through described actions and choices
+          1: 1-2 explicit value statements supported by evidence
+          2: Multiple value claims without supporting evidence
+          3: Heavy values language with no demonstrated values
+          4: Values section is clearly reverse-engineered from job posting
+          5: Document is pure values theater without any value-driven action
+
+scoring_interpretation:
+  0-20:
+    label: Minimal Bullshit Detected
+    description: Communication appears to prioritize truth and substance
+    characteristics:
+      - "Specific, verifiable claims throughout"
+      - "Appropriate modesty without false humility"
+      - "Accurate representation of context and scale"
+      - "Honest about limitations and failures"
+    interpretation: |
+      This communication shows strong evidence of truth-concern. Claims are
+      specific and verifiable, context is accurately represented, and the
+      communicator appears genuinely interested in accurately conveying their
+      actual experience and capabilities. This is rare and valuable.
+
+  21-40:
+    label: Mild Bullshit Presence
+    description: Some truth-indifference detected but not dominant
+    characteristics:
+      - "Occasional vague superlatives"
+      - "Minor context inflation"
+      - "Some buzzword usage"
+      - "Mostly factual with some impression management"
+    interpretation: |
+      Communication shows typical professional puffery - some inflation of
+      achievements, occasional strategic ambiguity, and modest impression
+      management. Not egregious but not fully committed to truth either.
+      Common in competitive job markets.
+
+  41-60:
+    label: Moderate Bullshit Concern
+    description: Significant truth-indifference, requires scrutiny
+    characteristics:
+      - "Pattern of unverifiable claims"
+      - "Noticeable metric manipulation"
+      - "Context fabrication in multiple areas"
+      - "Sophisticated presentation masking thin substance"
+    interpretation: |
+      This communication shows a clear pattern of indifference to truth.
+      Claims are chosen for effect rather than accuracy, and significant
+      portions may be fabricated or misrepresented. Approach with caution
+      and verify independently.
+
+  61-80:
+    label: High Bullshit Alert
+    description: Truth is secondary to impression management
+    characteristics:
+      - "Extensive unverifiable grandiosity"
+      - "Multiple contradictions and anachronisms"
+      - "Performative authenticity throughout"
+      - "High sophistication, low substance"
+    interpretation: |
+      Communication is primarily performative. Truth-value appears irrelevant
+      to the communicator's goals. High production values may mask completely
+      fabricated or grossly misrepresented experience. Significant independent
+      verification required before considering.
+
+  81-100:
+    label: Extreme Bullshit
+    description: Communication is almost entirely divorced from reality
+    characteristics:
+      - "Impossible timelines or achievements"
+      - "Virtually no verifiable content"
+      - "Maximum buzzword density, zero substance"
+      - "Elaborate fabrication of entire career narrative"
+    interpretation: |
+      This document appears to be almost entirely constructed without concern
+      for truth. It may bear little to no relationship to the communicator's
+      actual experience. Highly polished, sophisticated, and completely
+      untrustworthy. Reject unless independently verified.
+
+red_flags:
+  - description: Mathematical impossibilities in timeline
+    impact: Automatic high-score zone
+    notes: Overlapping full-time positions, negative time, impossible chronology
+
+  - description: Claims expertise in contradictory methodologies
+    impact: +15 points on Contradictory Expertise
+    notes: "Expert in both pure waterfall and extreme agile" without synthesis
+
+  - description: Technology claims before technology existed
+    impact: +20 points on Factual Anachronisms
+    notes: "Built LLM applications" in 2015, "cloud-native" in 2005
+
+  - description: All metrics are percentage improvements without baselines
+    impact: +15 points on Metric Manipulation
+    notes: 100% improvement from 1 to 2 users is not impressive
+
+  - description: Every company described as "unicorn" or "industry leader"
+    impact: +15 points on Organizational Misrepresentation
+    notes: Not every 10-person startup is "rapidly scaling"
+
+  - description: Document could be randomly generated
+    impact: +20 points on Buzzword Saturation
+    notes: If you can swap any paragraph with corporate bingo, it's empty
+
+  - description: No failures, no learning, only success
+    impact: +15 points on Absence of Correction Mechanism
+    notes: Human careers include setbacks; perfect records are suspicious
+
+  - description: Extreme emotional language for standard career
+    impact: +15 points on Performative Sincerity
+    notes: "Passionate" about 12 different things; "calling" for every role
+
+assessment_guidance:
+  general_approach: |
+    When assessing professional communication for bullshit:
+    
+    1. Look for the gap between form and substance. High polish + low content = concern.
+    
+    2. Check for verifiability. Can any specific claim be fact-checked? If not, why?
+    
+    3. Ask "what would make this false?" If there's no answer, truth-concern is absent.
+    
+    4. Look for patterns, not isolated incidents. One vague claim is normal; ten is strategic.
+    
+    5. Consider the alternative explanation. Could this be honest confusion vs. indifference?
+    
+    6. Trust specific, contextualized, humble claims over grand, absolute, polished ones.
+
+  specific_checks:
+    - category: Verifiability Test
+      steps:
+        - "Pick 3 specific claims (titles, metrics, projects)"
+        - "Attempt to mentally fact-check each one"
+        - "If none can be verified or disproven, high BS risk"
+        - "If several raise obvious questions, investigate further"
+
+    - category: Consistency Test
+      steps:
+        - "Check dates for mathematical possibility"
+        - "Verify technology existed during claimed timeframe"
+        - "Confirm company size matches described scope"
+        - "Look for contradictions between different sections"
+
+    - category: Motivation Test
+      steps:
+        - "Ask: What is this communicator trying to achieve?"
+        - "If the answer is 'accurate representation,' score low"
+        - "If the answer is 'create maximum impression,' score higher"
+        - "If the answer is unclear, look for sincerity markers"
+
+    - category: Substance Test
+      steps:
+        - "Count specific, concrete facts vs. vague descriptors"
+        - "High ratio of adjectives to nouns = concern"
+        - "Can you extract a specific task from each bullet?"
+        - "If bullet points describe activities not impact, empty substance"
+
+  comparison_to_lies: |
+    Important distinction from deliberate deception:
+    
+    Lies actively oppose truth. The liar knows what is true and says the opposite.
+    This preserves truth's authority (it's worth opposing).
+    
+    Bullshit is indifferent to truth. The communicator doesn't care if statements
+    are true or false - only if they achieve the desired effect.
+    
+    When scoring:
+    - Deliberate falsehood that can be disproven = lying (different concern)
+    - Carelessness about whether statements correspond to reality = BS
+    - Strategic ambiguity where truth is unknowable = high BS risk
+    
+    The goal is detecting indifference to truth, not prosecuting errors.
+
+best_practices_contrast:
+  low_bs_communication:
+    - "Specific metrics with context (reduced latency by 40% from 500ms to 300ms)"
+    - "Honest about role scope (contributed to team of 5 that built...)"
+    - "Accurate company context (20-person startup, seed stage)"
+    - "Appropriate modesty (familiar with, worked on, helped implement)"
+    - "Acknowledges limitations (learning, areas for growth, failed attempts)"
+    - "Verifiable claims (references, links, specific projects)"
+    - "Clear distinction between individual and team contributions"
+    - "Specific technical details (technologies, methods, outcomes)"
+
+  high_bs_communication:
+    - "Vague superlatives without specifics (revolutionized, pioneered, transformed)"
+    - "Inflated role titles (Senior at junior level, Lead without team)"
+    - "Misrepresented context (tiny startup as enterprise, pre-seed as Series C)"
+    - "False humility or performative sincerity (humble brags, passion signaling)"
+    - "No acknowledgment of failure or learning (perfect record implied)"
+    - "Unverifiable claims (industry first, only expert, changed everything)"
+    - "Absorbed team achievements (I built the platform when worked on component)"
+    - "Buzzword density without technical substance (synergy, paradigm, leverage)"
+
+metadata:
+  created_for: "Evaluating truth-concern in professional communication"
+  philosophical_basis: "Analysis of communication indifferent to truth-value"
+  total_possible_points: 100
+  score_interpretation: "Higher scores indicate greater indifference to truth"
+  last_updated: "2026-02-18"
+  usage_notes: |
+    This scoring sheet is designed for professional evaluators (hiring managers,
+    recruiters, investors, collaborators) to assess the reliability of claims
+    in professional contexts. It is NOT a character judgment but a communication
+    quality assessment.
+    
+    High scores don't necessarily mean "bad person" - they mean "approach claims
+    with heightened scrutiny." In competitive markets, some degree of professional
+    puffery is normal. The goal is detecting when puffery becomes wholesale
+    indifference to truth.
+    
+    Always consider context: early-career professionals may score higher due to
+    insecurity rather than calculation. Senior professionals with high scores
+    are more concerning.
