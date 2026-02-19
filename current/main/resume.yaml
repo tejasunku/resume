@@ -3,8 +3,8 @@ location: Redmond, WA (relocation ok)
 phone: "+1 (206) 445-3399"
 email: sunkut@outlook.com
 linkedin:
-  text: LinkedIn
-  url: https://www.linkedin.com/in/tejasunku
+    text: /in/tejasunku
+    url: https://www.linkedin.com/in/tejasunku
 
 summary: |
   Experienced AI Infrastructure Engineer with strong proficiency in Python and AWS, led the migration of a core LLM routing service to async architecture, significantly enhancing performance. Successfully managed the transition to Kubernetes for improved service orchestration. Draws on substantial data science background, wishing to leverage skills in efficient data management and deployment resilience to drive key infrastructure projects.
