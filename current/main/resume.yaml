@@ -10,6 +10,14 @@ summary: |
   Experienced AI Infrastructure Engineer with strong proficiency in Python and AWS, led the migration of a core LLM routing service to async architecture, significantly enhancing performance. Successfully managed the transition to Kubernetes for improved service orchestration. Draws on substantial data science background, wishing to leverage skills in efficient data management and deployment resilience to drive key infrastructure projects.
 
 experience:
+  - company: Tumble (trytumble.app)
+    dates: Oct 2025 - Present
+    title: Co-Founder & Tech Lead
+    achievements:
+      - Built consumer planner app from scratch as technical cofounder, owning full-stack development with TypeScript, Next.js, and React patterns
+      - Led all architectural decisions including app structure, state management, and deployment pipeline
+      - Conducted user testing with early adopters to inform product direction, progressing from concept to MVP in 4 months
+
   - company: Ashvin AI
     dates: Jan 2024 - Jun 2025
     title: Machine Learning, Operations (ML Ops)
