@@ -2,3 +2,5 @@
 private_copy/
 /private/books/
 /private/example_resumes/
+!/private/.gitkeep
+!/targeted/.gitkeep
