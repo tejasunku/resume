@@ -1,4 +1,4 @@
 **/node_modules/**
 private_copy/
-private/*
-!private/.gitrepo
+/private/books/
+/private/example_resumes/
