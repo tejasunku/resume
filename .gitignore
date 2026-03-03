@@ -1,1 +1,4 @@
 **/node_modules/**
+private_copy/
+private/*
+!private/.gitrepo
