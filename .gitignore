@@ -1,7 +1,6 @@
 **/node_modules/**
 private_copy/
-/private/books/
-/private/example_resumes/
+/private/*
 /targeted/*
 !/private/.gitkeep
 !/private/.gitrepo
