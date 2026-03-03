@@ -6,6 +6,7 @@
 [subrepo]
 	remote = s3://idrive-e2@private-git/resume-targeted-versions
 	branch = main
-	commit = 
+	commit = a3da7bc04c0abda1bee6fb316332e62067e23fcd
 	method = merge
 	cmdver = 0.4.9
+	parent = 0a66315f7d3894d8661147ac774ba7e60a2b5be1
