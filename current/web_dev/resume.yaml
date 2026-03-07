@@ -16,7 +16,7 @@ summary: |
 
 experience:
   - company: Tumble (trytumble.app)
-    dates: Oct 2025 - Present
+    dates: 2025 - Present
     title: Co-Founder & Tech Lead
     achievements:
       - Built consumer planner app as technical co-founder, owning 0→1 development from concept to MVP in 4 months
@@ -25,7 +25,7 @@ experience:
       - Led architectural decisions including Next.js Pages Router, Supabase for integrated DB/auth, Render.com with custom domain
 
   - company: Ashvin AI
-    dates: Jan 2024 - Jun 2025
+    dates: 2024 - 2025
     title: Machine Learning, Operations (ML Ops)
     achievements:
       - Led migration to async architecture, increasing LLM routing throughput 10x
@@ -34,7 +34,7 @@ experience:
       - Redesigned CI/CD, cutting build-to-deploy latency by ~70%
 
   - company: Cyentia Institute
-    dates: Apr 2022 - Jan 2023
+    dates: 2022 - 2023
     title: Data Scientist
     achievements:
       - Analyzed datasets of 1M+ rows using NLP (SpaCy, BERT) to augment CVE data feeds
