@@ -5,9 +5,7 @@
   "type": "module",
   "scripts": {
     "build:main": "ts-node-esm scripts/build-pdf.ts current/main",
-    "check:main": "ts-node-esm scripts/check-pages.ts current/main",
-    "build:recruits-lab": "ts-node-esm scripts/build-pdf.ts targeted/week-ending-2026-03-07/recruits-lab-senior-aiml",
-    "check:recruits-lab": "ts-node-esm scripts/check-pages.ts targeted/week-ending-2026-03-07/recruits-lab-senior-aiml"
+    "check:main": "ts-node-esm scripts/check-pages.ts current/main"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
