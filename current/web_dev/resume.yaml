@@ -32,12 +32,14 @@ experience:
       - Designed multi-step document processing with multimodal LLMs and structured extraction
       - Spearheaded Kubernetes adoption, converting legacy scripts to containerized FastAPI microservices
       - Redesigned CI/CD, cutting build-to-deploy latency by ~70%
+      - Developed CRUD API endpoints for PostgreSQL database to support React frontend components and real-time data access
 
   - company: Cyentia Institute
     dates: 2022 - 2023
     title: Data Scientist
     achievements:
       - Analyzed datasets of 1M+ rows using NLP (SpaCy, BERT) to augment CVE data feeds
+      - Manipulated DOM of React-based websites to scrape security vulnerability data
       - Created Docker scripts enabling reproducible testing environments
 
 education:
