@@ -1,0 +1,66 @@
+name: Teja Sunku
+location: Redmond, WA (US Citizen, relocation ok)
+phone: "+1 (206) 445-3399"
+email: sunkut@outlook.com
+linkedin:
+    text: /in/tejasunku
+    url: https://www.linkedin.com/in/tejasunku
+
+summary: |
+  Full-stack engineer with founder mindset and 1.5+ years building AI-powered web applications. Built
+  consumer planner app from concept to MVP in 4 months using TypeScript, Next.js, and React. Makes
+  deliberate technology choices prioritizing simplicity and shipping velocity—selected Next.js and
+  Supabase for rapid development, enabling faster feature delivery than traditional cloud stacks.
+  Led LLM integration at healthcare AI startup, architecting async routing systems and document
+  processing workflows. Combines frontend expertise with backend depth—can own features end-to-end.
+
+experience:
+  - company: Tumble (trytumble.app)
+    dates: Oct 2025 - Present
+    title: Co-Founder & Tech Lead
+    achievements:
+      - Built consumer planner app as technical co-founder, owning 0→1 development from concept to MVP in 4 months
+      - Architected full-stack TypeScript codebase with Next.js, React, and Next.js API routes
+      - Integrated Anthropic AI SDK with structured output and prompt caching, reducing API costs by 5x
+      - Led architectural decisions including Next.js Pages Router, Supabase for integrated DB/auth, Render.com with custom domain
+
+  - company: Ashvin AI
+    dates: Jan 2024 - Jun 2025
+    title: Machine Learning, Operations (ML Ops)
+    achievements:
+      - Led migration to async architecture, increasing LLM routing throughput 10x
+      - Designed multi-step document processing with multimodal LLMs and structured extraction
+      - Spearheaded Kubernetes adoption, converting legacy scripts to containerized FastAPI microservices
+      - Redesigned CI/CD, cutting build-to-deploy latency by ~70%
+
+  - company: Cyentia Institute
+    dates: Apr 2022 - Jan 2023
+    title: Data Scientist
+    achievements:
+      - Analyzed datasets of 1M+ rows using NLP (SpaCy, BERT) to augment CVE data feeds
+      - Created Docker scripts enabling reproducible testing environments
+
+education:
+  - school: UC San Diego
+    dates: 2023 - 2024
+    degree: Machine Learning Bootcamp
+
+  - school: University of Idaho
+    dates: 2017 - 2021
+    degree: B.S., Statistics & Philosophy, Minor in Computer Science (Graduating Senior of the Year, College of Science)
+
+skills:
+  - label: Languages
+    items: Python, TypeScript, JavaScript, SQL (Postgres), Bash, R
+  - label: Frontend
+    items: React, Next.js, HTML/CSS, Tailwind CSS
+  - label: Backend & APIs
+    items: FastAPI, Node.js, REST APIs, Next.js API Routes
+  - label: AI & LLMs
+    items: Anthropic AI SDK, OpenAI API, Prompt Engineering, LLM Integration, Structured Output
+  - label: Databases
+    items: PostgreSQL, MongoDB, Redis, Supabase
+  - label: Cloud & Infrastructure
+    items: AWS, Render.com, Docker, Kubernetes, GitHub Actions
+  - label: Development Practices
+    items: CI/CD, Async programming, Pytest, Documentation and Testing

@@ -1,0 +1,367 @@
+name: Full-Stack AI-Native Startup Engineer
+version: 1.0.0
+purpose: >
+  Evaluates resumes for full-stack web development roles at AI-native consumer startups.
+  Emphasizes 0→1 product building, full-stack ownership, React/Next.js expertise,
+  AI integration capabilities, and startup-friendly generalist mindset.
+
+overview: |
+  This scoring sheet assesses fit for roles at early-to-mid stage startups that build
+  AI-powered consumer web applications. The ideal candidate demonstrates:
+  - Full-stack ownership from concept to deployment
+  - Modern React/Next.js frontend development
+  - API/backend architecture and middleware design
+  - AI/LLM integration and prompt engineering
+  - Cloud-native deployment and DevOps
+  - Startup mindset: speed, iteration, user-focused
+
+  Heavy weighting on Full-Stack Development (30 points) and AI Integration (25 points)
+  with significant emphasis on Product/Startup Mindset (20 points).
+
+scoring_scale:
+  0: No evidence
+  1: Minimal mention (single keyword, passing reference)
+  2: Some exposure (course/project work, basic usage)
+  3: Working knowledge (professional use, standard applications)
+  4: Significant experience (multiple projects, production systems)
+  5: Expert-level (deep specialization, leadership, complex implementations)
+
+domains:
+  - name: Full-Stack Web Development
+    description: Complete web application development from frontend to backend
+    weight: 30
+    max_points: 30
+    criteria:
+      - name: Frontend & React Ecosystem
+        description: Modern frontend development with React and related technologies
+        what_to_look_for:
+          - React components, hooks, state management
+          - Next.js framework (SSR, SSG, routing)
+          - TypeScript for type safety
+          - UI/UX implementation, responsive design
+          - Modern frontend tooling (Vite, Webpack, etc.)
+          - CSS frameworks (Tailwind, styled-components, etc.)
+        scoring:
+          0: No React or frontend framework experience
+          1: Basic HTML/CSS/JavaScript only
+          2: Some React exposure, basic components
+          3: Production React/Next.js development
+          4: Complex frontend architecture, state management
+          5: Frontend technical leadership or framework contributions
+
+      - name: Backend & APIs
+        description: Server-side development and API architecture
+        what_to_look_for:
+          - RESTful API design and implementation
+          - GraphQL or gRPC APIs
+          - Backend frameworks (FastAPI, Node.js/Express, Django)
+          - Database design (SQL, NoSQL)
+          - Authentication/authorization (JWT, OAuth)
+          - Middleware and service architecture
+        scoring:
+          0: No backend development experience
+          1: Simple scripts or basic API calls
+          2: Some backend exposure, CRUD operations
+          3: Production API development
+          4: Complex microservices or distributed systems
+          5: Backend architecture leadership
+
+      - name: Database & Data Layer
+        description: Data persistence, caching, and management
+        what_to_look_for:
+          - PostgreSQL, MongoDB, Redis
+          - ORM/ODM usage (Prisma, SQLAlchemy, Mongoose)
+          - Database schema design and migrations
+          - Caching strategies and optimization
+          - Data modeling for application needs
+        scoring:
+          0: No database experience
+          1: Basic SQL queries
+          2: Standard CRUD with ORM
+          3: Production database design and optimization
+          4: Complex data architectures
+          5: Database architecture leadership
+
+  - name: AI Integration & LLMs
+    description: Integrating AI/LLM capabilities into web applications
+    weight: 25
+    max_points: 25
+    criteria:
+      - name: LLM Integration
+        description: Building with Large Language Models and AI APIs
+        what_to_look_for:
+          - OpenAI API, Anthropic, or similar integration
+          - Prompt engineering and optimization
+          - Multi-step LLM workflows
+          - Model selection and cost optimization
+          - Streaming responses and real-time AI features
+          - AI-powered user features (chat, generation, analysis)
+        scoring:
+          0: No LLM or AI integration experience
+          1: Basic API calls to ChatGPT
+          2: Simple AI features in side projects
+          3: Production LLM integration with user-facing features
+          4: Complex multi-model AI systems
+          5: AI product architecture or LLM platform development
+
+      - name: AI Workflow Architecture
+        description: Designing systems around AI capabilities
+        what_to_look_for:
+          - Document processing with AI (OCR, extraction)
+          - RAG (Retrieval-Augmented Generation) systems
+          - AI agent design and orchestration
+          - Vector databases (Pinecone, Weaviate, pgvector)
+          - Multi-modal AI (text, image, PDF processing)
+        scoring:
+          0: No AI workflow experience
+          1: Basic understanding of AI concepts
+          2: Simple AI pipelines
+          3: Production AI workflows
+          4: Complex AI-driven architectures
+          5: AI system design leadership
+
+  - name: Cloud & DevOps
+    description: Deployment, infrastructure, and operational excellence
+    weight: 15
+    max_points: 15
+    criteria:
+      - name: Cloud Deployment & Infrastructure
+        description: Getting applications to production and keeping them running
+        what_to_look_for:
+          - AWS/GCP/Azure services (Lambda, EC2, Vercel, etc.)
+          - Containerization (Docker, Kubernetes)
+          - CI/CD pipelines (GitHub Actions, etc.)
+          - Infrastructure as Code (Terraform, CloudFormation)
+          - Monitoring and observability (Datadog, etc.)
+        scoring:
+          0: No cloud or deployment experience
+          1: Basic cloud service usage
+          2: Standard deployment practices
+          3: Production cloud architecture
+          4: Multi-environment or complex infrastructure
+          5: Infrastructure/DevOps leadership
+
+  - name: Product & Startup Mindset
+    description: 0→1 thinking, user focus, and startup velocity
+    weight: 20
+    max_points: 20
+    criteria:
+      - name: Founder/0→1 Mindset
+        description: Taking products from idea to shipped
+        what_to_look_for:
+          - Co-founder or early engineer experience
+          - MVP development and iteration
+          - Full ownership of features/products
+          - Rapid prototyping and validation
+          - User testing and feedback integration
+          - "Wearing many hats" generalist approach
+        scoring:
+          0: No startup or ownership experience
+          1: Team member at established company
+          2: Some startup exposure
+          3: Significant 0→1 product experience
+          4: Multiple MVPs or co-founder experience
+          5: Successful product launch or technical co-founder
+
+      - name: User-Centric Development
+        description: Building for users, not just technology
+        what_to_look_for:
+          - User research and testing
+          - Product sense and UX intuition
+          - Iterating based on user feedback
+          - Balancing technical debt with speed
+          - Feature prioritization and trade-offs
+        scoring:
+          0: No evidence of user focus
+          1: Basic awareness of users
+          2: Some user interaction
+          3: Regular user testing and iteration
+          4: Strong product sense demonstrated
+          5: Product leadership or exceptional user focus
+
+      - name: Speed & Iteration
+        description: Moving fast and learning quickly
+        what_to_look_for:
+          - Rapid development cycles
+          - Shipping features quickly
+          - Learning from failures
+          - Agile/lean methodology
+          - Decision making with incomplete information
+        scoring:
+          0: No evidence of speed/iteration
+          1: Standard development pace
+          2: Some fast-paced work
+          3: Regular rapid iteration
+          4: Known for shipping quickly
+          5: Velocity leader or exceptional speed
+
+scoring_interpretation:
+  85-100:
+    label: Exceptional Fit
+    description: Strong across all domains with clear startup/AI focus
+    characteristics:
+      - "Clear evidence of React + Backend + AI integration"
+      - "0→1 product building experience"
+      - "Full-stack ownership with startup mindset"
+      - "Ideal candidate for AI-native startup"
+
+  70-84:
+    label: Strong Fit
+    description: Solid coverage with strength in key areas
+    characteristics:
+      - "Strong full-stack development"
+      - "Good AI integration experience"
+      - "Startup-friendly mindset"
+      - "Minor gaps in specific areas"
+
+  55-69:
+    label: Moderate Fit
+    description: Adequate coverage with some gaps
+    characteristics:
+      - "Strong in 2-3 domains, weak in others"
+      - "May lack AI or full-stack depth"
+      - "Consider upskilling narrative"
+
+  40-54:
+    label: Limited Fit
+    description: Significant gaps for target role
+    characteristics:
+      - "Missing key full-stack or AI elements"
+      - "Traditional developer without startup experience"
+      - "May need substantial reframing"
+
+  0-39:
+    label: Poor Fit
+    description: Very misaligned for target role
+    characteristics:
+      - "Lacks core web development experience"
+      - "No AI or startup relevance"
+      - "Consider different role type"
+
+red_flags:
+  - description: No React or modern frontend framework
+    impact: -20 points
+    notes: Resume reads as backend-only developer
+
+  - description: No AI/LLM integration experience
+    impact: -15 points
+    notes: Critical for AI-native startup roles
+
+  - description: Only big company experience
+    impact: -10 points
+    notes: May not have startup pace/ownership mindset
+
+  - description: No evidence of shipping products
+    impact: -10 points
+    notes: Focuses on tasks rather than outcomes
+
+  - description: Outdated tech stack
+    impact: -10 points
+    notes: Old frameworks, no modern web development
+
+  - description: No cloud/deployment experience
+    impact: -5 points
+    notes: May not understand production operations
+
+recommendations_for_improvement:
+  full_stack:
+    - "Emphasize React/Next.js experience prominently"
+    - "Show end-to-end feature ownership (frontend → backend → deployment)"
+    - "Include specific frontend achievements and UI/UX contributions"
+    - "Highlight TypeScript and modern development practices"
+    - "Mention middleware and API design experience"
+
+  ai_integration:
+    - "Lead with LLM integration experience"
+    - "Quantify AI impact on user experience or efficiency"
+    - "Describe prompt engineering and optimization"
+    - "Show understanding of model selection and cost tradeoffs"
+    - "Include any multi-step AI workflows or RAG systems"
+
+  startup_mindset:
+    - "Emphasize 0→1 product building"
+    - "Show user testing and iteration cycles"
+    - "Demonstrate speed and shipping velocity"
+    - "Highlight full ownership and autonomy"
+    - "Include co-founder or early employee experience"
+
+  cloud_devops:
+    - "Show production deployment experience"
+    - "Mention CI/CD and automation"
+    - "Include monitoring and reliability work"
+    - "Demonstrate understanding of cloud costs"
+
+keywords_checklist:
+  full_stack:
+    - React
+    - Next.js
+    - TypeScript
+    - JavaScript
+    - frontend
+    - backend
+    - full-stack
+    - API
+    - REST
+    - GraphQL
+    - FastAPI
+    - Node.js
+    - PostgreSQL
+    - MongoDB
+    - Redis
+    - ORM
+    - Prisma
+    - middleware
+    - state management
+    - hooks
+    - components
+
+  ai_llm:
+    - LLM
+    - OpenAI
+    - Anthropic
+    - prompt engineering
+    - AI integration
+    - GPT
+    - Claude
+    - streaming
+    - RAG
+    - vector database
+    - embeddings
+    - document processing
+    - AI workflow
+
+  cloud_devops:
+    - AWS
+    - Vercel
+    - Docker
+    - Kubernetes
+    - CI/CD
+    - GitHub Actions
+    - Terraform
+    - serverless
+    - Lambda
+    - deployment
+    - monitoring
+    - DevOps
+
+  startup:
+    - co-founder
+    - MVP
+    - 0 to 1
+    - "0→1"
+    - user testing
+    - iteration
+    - product
+    - startup
+    - early stage
+    - ownership
+    - full ownership
+
+metadata:
+  created_for: "Full-stack web development at AI-native consumer startups"
+  weighted_domains:
+    - Full-Stack Development (30 points)
+    - AI Integration (25 points)
+    - Product/Startup Mindset (20 points)
+  total_possible_points: 100
+  last_updated: "2026-03-07"
