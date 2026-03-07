@@ -29,6 +29,7 @@ experience:
       - Designed a multi-repo integration test suite to validate cross-service dependencies, cutting release-time regressions across shared infrastructure by 50% and improving deployment reliability
       - Built resilient ingestion and export pipelines for medical systems including Brightree, HDMS, and TIMS, normalizing untyped legacy data into structured formats. Enabled same-week integration with clients using these systems, covering over 80% of prospective partners and accelerating onboarding
       - Unified Engineering and DevOps pipelines by redesigning CI/CD processes, cutting container build-to-deploy latency by about 70% through caching and parallelization. Developed a custom FastAPI metric measuring concurrent in-flight requests to replace unreliable CPU/RAM signals and improve Kubernetes autoscaling
+      - Developed CRUD API endpoints for PostgreSQL database to support React frontend components and real-time data access
       - Mentored junior engineers in debugging, AWS, and command-line best practices, accelerating interns' onboarding and enabling them to independently lead significant feature development within their first month
 
   - company: Cyentia Institute
@@ -38,6 +39,7 @@ experience:
       - Analyzed datasets of 1 million+ rows to derive actionable insight and generate comprehensive reports, collaborating with Marketing to finetune visualizations
       - Trained and implemented NLP machine learning models using SpaCy and BERT models to augment CVE-related data feeds with key words and phrases, improving data accuracy and relevance
       - Extracted vulnerability descriptions from websites and APIs using R and Python, exporting structured tabular formats to AWS, which enhanced data accessibility and integration for security analysis
+      - Manipulated DOM of React-based websites to scrape security vulnerability data
       - Enabled reproducible testing environments by creating Docker scripts with detailed documentation, and by constructing AWS test environments and configs for validating pre-production code
 
 education:
