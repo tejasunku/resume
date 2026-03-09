@@ -1,0 +1,904 @@
+name: Cover Letter Evaluation (2026 Research-Based)
+version: 1.0.0
+purpose: >
+  Research-backed cover letter scoring based on 2025 recruiter surveys, field experiments,
+  and algorithmic analysis. Emphasizes textual similarity, personalization, recruiter priorities,
+  and quality signals. Designed to detect generic, AI-generated, or low-effort submissions.
+
+overview: |
+  This scoring sheet evaluates cover letters against evidence-based criteria from:
+  - 2025 Zety survey of 753 recruiters on expectations and priorities
+  - Field experiments with ~½ million job-seekers on writing quality impact
+  - Algorithmic studies on textual similarity and AI detection
+  
+  Key findings integrated into scoring:
+  1. 89% of recruiters expect cover letters, 83% read them
+  2. 81% have rejected candidates solely due to poor cover letters
+  3. Textual similarity to job description increases selection by ~15%
+  4. Writing assistance improves hire rate by 8%
+  5. AI-generated letters reduce signal value by 51%
+  6. Optimal length: 250-400 words (½ page)
+  
+  Recruiter priority ranking:
+  - Relevant experience (27%)
+  - Personality/communication (24%)
+  - Company connection/referral (19%)
+  - Knowledge of job posting (13%)
+  - Quantifiable achievements (4%)
+  - Keywords (2%)
+
+research_basis:
+  textual_similarity:
+    finding: "One-standard-deviation increase in similarity raises selection by ~0.10 percentage-points (≈15% relative increase)"
+    implication: "Cover letters must demonstrate they were written for THIS specific role"
+    weight: "Heavy - primary signal of genuine interest and fit"
+    
+  writing_quality:
+    finding: "Algorithmic writing assistance increased hire rate by 8%"
+    implication: "Professional, clear, error-free writing is measurable signal"
+    weight: "Significant - reflects communication ability and attention to detail"
+    
+  recruiter_expectations:
+    source: "Zety 2025 survey of 753 recruiters"
+    key_stats:
+      - "89% expect a cover letter"
+      - "83% actually read them"
+      - "81% have rejected candidates solely due to poor cover letters"
+      
+  optimal_length:
+    finding: "~250-400 words (½ page) rated as 'perfect' by nearly half of recruiters"
+    implication: "Too long = skimming risk, too short = lack of effort signal"
+    weight: "Moderate - important for recruiter scanning behavior"
+    
+  ai_impact:
+    finding: "AI-generated letters reduce signal's informational content by 51%"
+    implication: "Heavy AI reliance dilutes the very purpose of cover letters"
+    weight: "Critical - detection matters for authenticity"
+
+scoring_scale:
+  0: Not present / Critical failure
+  1: Poor (missing key element, errors, or low effort)
+  2: Below average (present but weak, generic, or minimally tailored)
+  3: Average (acceptable, meets basic expectations)
+  4: Good (well-crafted, specific, tailored)
+  5: Excellent (outstanding, highly personalized, compelling)
+
+critical_requirements:
+  description: |
+    Elements that, if missing or poor quality, often lead to immediate rejection.
+    81% of recruiters have rejected candidates solely for poor cover letters.
+    
+  requirements:
+    - name: Basic Professionalism
+      description: Cover letter must meet minimum professional standards
+      pass_criteria:
+        - Free of spelling and grammar errors
+        - Proper business letter format
+        - Correct recipient name and title (if known)
+        - Professional tone throughout
+        - Appropriate length (not too short, not too long)
+      fail_criteria:
+        - Typos or grammatical errors (immediate red flag)
+        - Wrong company or role name (automatic rejection)
+        - Unprofessional tone or inappropriate content
+        - Excessive length (more than 1 page) or extreme brevity (<100 words)
+        - Template letters with placeholders still visible
+      
+    - name: Authentic Personalization
+      description: Must be clearly written for THIS specific application
+      pass_criteria:
+        - References specific role, company, and why interested
+        - Cannot be swapped with another organization without being noticed
+        - Shows genuine research into company/role
+        - Personal voice comes through (not generic template)
+      fail_criteria:
+        - Generic letter that could apply to any company
+        - Wrong company name or role title
+        - Template language with only names swapped
+        - No evidence of research into specific opportunity
+        - Completely generic opening ("I am writing to apply...")
+
+    - name: Clear Value Proposition
+      description: Opening paragraph must state what you bring
+      pass_criteria:
+        - States exact role and why excited
+        - Concise value proposition in first paragraph
+        - Shows understanding of role requirements
+        - Creates interest in reading further
+      fail_criteria:
+        - Rambling opening without clear purpose
+        - No connection to specific role
+        - Generic "I'm a hard worker" statements
+        - Fails to capture attention in first 3 sentences
+
+  domains:
+  - name: Textual Similarity & Tailoring
+    description: |
+      Degree to which cover letter demonstrates it was written for THIS specific role.
+      Research shows 1 SD increase in similarity to job description = ~15% higher selection probability.
+      This is the PRIMARY signal of genuine interest and fit.
+      
+      Qualitative assessment: Does the cover letter clearly reference the specific job description?
+      Can it be swapped with another company's letter without notice?
+    weight: 20
+    max_points: 20
+    criteria:
+      - name: Job Description Alignment
+        description: How well letter reflects understanding of role requirements
+        what_to_look_for:
+          - Explicitly mentions requirements from posting
+          - Uses terminology consistent with job description
+          - Addresses specific responsibilities listed
+          - Demonstrates knowledge of role scope
+          - Avoids generic claims disconnected from posting
+        scoring:
+          0: No reference to job description requirements
+          1: Minimal connection, generic claims only
+          2: Some alignment but could apply to similar roles
+          3: Clear connection to specific requirements
+          4: Strong alignment, addresses multiple specific requirements
+          5: Deep integration with posting, addresses all key requirements intelligently
+
+      - name: Company-Specific Research
+        description: Evidence of research into company, team, and context
+        what_to_look_for:
+          - References company mission, values, or recent news
+          - Mentions specific products, projects, or initiatives
+          - Shows understanding of company challenges or goals
+          - Demonstrates knowledge of team or leadership
+          - Connects personal interest to company context
+        scoring:
+          0: Generic "I admire your company" with no specifics
+          1: Minimal customization beyond company name
+          2: Basic "I like your product" type statements
+          3: Specific references to company, shows basic research
+          4: Strong research evident, multiple specific references
+          5: Deep company knowledge, strategic alignment, genuine insight
+
+      - name: Role-Specific Motivation
+        description: Why THIS role at THIS company (not just any job)
+        what_to_look_for:
+          - Clear explanation of why this specific role
+          - Connection to career trajectory and goals
+          - Why this company vs. competitors
+          - Demonstrates genuine interest, not just need for job
+          - Shows understanding of what role entails
+        scoring:
+          0: Generic "I'm looking for opportunities" statement
+          1: Weak connection, could be any role
+          2: Some specificity but feels templated
+          3: Clear motivation for role and company
+          4: Strong narrative connecting self to specific opportunity
+          5: Compelling, personalized story of why THIS role fits perfectly
+
+      - name: Keyword Alignment
+        description: Use of key terminology from job description
+        what_to_look_for:
+          - Incorporates key skills/requirements from JD
+          - Uses industry-standard terminology
+          - Reflects language used in job posting
+          - Helps with ATS and recruiter scanning
+          - Natural integration, not keyword stuffing
+        scoring:
+          0: No keyword alignment with job description
+          1: Minimal overlap, misses key terms
+          2: Some keywords but awkward integration
+          3: Good keyword integration throughout
+          4: Strong alignment, natural use of JD terminology
+          5: Perfect integration, reflects all key requirements naturally
+
+  - name: Relevant Experience Presentation
+    description: |
+      How effectively cover letter presents relevant experience.
+      27% of recruiters prioritize this - highest ranked factor.
+      Must show experience early and connect clearly to role requirements.
+    weight: 20
+    max_points: 20
+    criteria:
+      - name: Early Experience Highlight
+        description: Gets to relevant experience quickly (first or second paragraph)
+        what_to_look_for:
+          - Experience mentioned prominently, not buried
+          - Focus on MOST relevant experience, not chronological listing
+          - Clear connection between experience and role requirements
+          - Avoids starting with generic bio or education
+          - Shows value proposition upfront
+        scoring:
+          0: No experience mentioned, or irrelevant experience only
+          1: Experience buried late in letter, weak connection
+          2: Experience mentioned but generic, not tailored
+          3: Relevant experience in first/second paragraph, adequate connection
+          4: Strong early focus on relevant experience, clear fit demonstrated
+          5: Immediate, compelling experience hook that grabs attention
+
+      - name: Experience Relevance
+        description: Degree to which experience aligns with role requirements
+        what_to_look_for:
+          - Highlights experience most relevant to role
+          - Avoids listing all experience indiscriminately
+          - Shows career progression toward this role type
+          - Demonstrates understanding of what role requires
+          - Connects skills to specific job responsibilities
+        scoring:
+          0: No relevant experience, or experience unrelated to role
+          1: Weak connection, stretch to see relevance
+          2: Some relevant experience but not prioritized
+          3: Clear relevant experience, good prioritization
+          4: Strong alignment, experience perfectly suited
+          5: Exceptional fit, experience seems custom-built for role
+
+      - name: Impact Quantification
+        description: Uses specific metrics, numbers, and outcomes
+        what_to_look_for:
+          - Specific achievements with quantitative results
+          - Percentages, numbers, dollar amounts, time savings
+          - Concrete outcomes, not just responsibilities
+          - Context for metrics (from X to Y)
+          - Verifiable claims
+        scoring:
+          0: No metrics, only responsibilities listed
+          1: Vague claims ("improved performance")
+          2: 1-2 metrics but lacks context or specificity
+          3: Several specific metrics with reasonable context
+          4: Strong quantitative evidence across achievements
+          5: Compelling, specific, verifiable metrics that demonstrate impact
+
+  - name: Personality & Communication
+    description: |
+      Demonstrates personality fit and communication ability.
+      24% of recruiters prioritize this - second highest factor.
+      Cover letter IS a writing sample - must show skill.
+    weight: 18
+    max_points: 18
+    criteria:
+      - name: Writing Quality & Clarity
+        description: Professional, clear, well-structured writing
+        what_to_look_for:
+          - Clean, grammatical prose
+          - Logical structure (intro, body, closing)
+          - Active voice and strong verbs
+          - No redundancy or filler
+          - Engaging but professional tone
+        scoring:
+          0: Poor writing, errors, confusing structure
+          1: Acceptable but weak, some issues
+          2: Adequate writing, some awkwardness
+          3: Clear, professional writing
+          4: Strong writing, engaging and polished
+          5: Exceptional writing, compelling narrative voice
+
+      - name: Personality & Tone
+        description: Authentic personality comes through appropriately
+        what_to_look_for:
+          - Genuine enthusiasm evident
+          - Professional warmth, not stiffness
+          - Appropriate formality for role/industry
+          - Voice feels human and authentic
+          - Balance of professionalism and personality
+          - Not forcing language patterns that don't fit naturally
+        scoring:
+          0: Generic template, no personality
+          1: Stiff, overly formal, or inauthentic tone
+          2: Some personality but generic in places
+          3: Professional warmth, appropriate tone
+          4: Engaging personality, genuine voice
+          5: Memorable, authentic, compelling personal voice
+
+      - name: Structure & Flow
+        description: Logical organization and easy to follow
+        what_to_look_for:
+          - Clear three-paragraph structure
+          - Smooth transitions between sections
+          - Easy to scan quickly
+          - Logical progression of ideas
+          - Coherent narrative arc
+        scoring:
+          0: Disorganized, hard to follow
+          1: Weak structure, confusing flow
+          2: Adequate structure but choppy
+          3: Clear three-paragraph structure, good flow
+          4: Strong organization, easy to read
+          5: Perfect flow, draws reader through naturally
+
+  - name: Connection & Referral
+    description: |
+      Personal connection or referral mentioned.
+      19% of recruiters look for this - significant signal.
+    weight: 15
+    max_points: 15
+    criteria:
+      - name: Personal Connection
+        description: Genuine personal or network connection to company
+        what_to_look_for:
+          - Specific referral from current employee
+          - Personal connection to company/team
+          - Interaction with company product/service
+          - Attendance at company events, talks, etc.
+          - Genuine relationship, not just name-dropping
+        scoring:
+          0: No personal connection (not required, just factual)
+          1: Weak connection mentioned ("I've heard of your company")
+          2: Some connection but feels generic
+          3: Clear personal connection or referral
+          4: Strong connection with specific details
+          5: Compelling connection story, genuine relationship
+
+      - name: Network Leverage
+        description: How effectively connection is used
+        what_to_look_for:
+          - Connection is mentioned naturally, not forced
+          - Explains relationship authentically
+          - Doesn't over-rely on connection
+          - Used as supplement, not main argument
+          - Shows understanding of referral value
+        scoring:
+          0: No connection to leverage (not penalized)
+          1: Connection mentioned awkwardly
+          2: Connection used but clumsily
+          3: Connection integrated smoothly
+          4: Connection strengthens story effectively
+          5: Connection used strategically to enhance candidacy
+
+    notes: |
+      IMPORTANT: Lack of personal connection is NOT penalized. This criteria
+      only ADDS points if present. A cover letter without connections can still
+      score 85+ points. This is about recognizing value-added signals, not
+      penalizing lack of network.
+
+  - name: Length & Format
+    description: |
+      Adherence to optimal length and professional formatting.
+      Research shows ~250-400 words (½ page) is "perfect" for nearly half of recruiters.
+      Too long risks skimming; too short signals low effort.
+    weight: 10
+    max_points: 10
+    criteria:
+      - name: Optimal Length
+        description: Falls within 250-400 word sweet spot
+        what_to_look_for:
+          - Word count approximately 250-400 words
+          - Fits on half page when formatted
+          - Not too brief (signals low effort)
+          - Not too long (risks skimming)
+          - Complete content without padding
+        scoring:
+          0: Far outside optimal range (<150 or >600 words)
+          1: Poor length (<200 or >500 words)
+          2: Suboptimal but acceptable (200-249 or 401-500 words)
+          3: Good length (250-400 words)
+          4: Optimal length ~300-350 words
+          5: Perfect length, complete content, no filler
+
+      - name: Professional Format
+        description: Proper business letter formatting
+        what_to_look_for:
+          - Standard business letter format
+          - Professional header with contact info
+          - Proper salutation (name + title if known)
+          - Appropriate font, margins, spacing
+          - Single-spaced, 10-12pt font
+        scoring:
+          0: Unprofessional or inappropriate format
+          1: Format issues that distract
+          2: Adequate formatting
+          3: Professional business letter format
+          4: Strong formatting, easy to read
+          5: Flawless professional presentation
+
+      - name: Visual Scannability
+        description: Easy for recruiter to scan in 30-60 seconds
+        what_to_look_for:
+          - Clear paragraph breaks
+          - Key points easy to spot
+          - Not dense walls of text
+          - Good use of white space
+          - Logical visual hierarchy
+        scoring:
+          0: Dense, hard to scan
+          1: Poor visual structure
+          2: Acceptable but could be clearer
+          3: Good scannability
+          4: Easy to scan quickly
+          5: Perfect visual structure for rapid reading
+
+  - name: Unique Value vs Resume
+    description: |
+      Cover letter should COMPLEMENT the resume, not repeat it.
+      The resume provides facts; the cover letter provides narrative.
+      
+      A good cover letter adds context, story, and motivation that
+      the resume cannot convey. It should make the resume more compelling,
+      not duplicate it.
+    weight: 7
+    max_points: 7
+    criteria:
+      - name: Non-Redundant Content
+        description: Doesn't simply restate resume bullet points
+        what_to_look_for:
+          - Adds narrative context to achievements
+          - Tells the story behind the resume facts
+          - Explains motivation and fit, not just accomplishments
+          - Provides insight resume can't convey
+          - Shows personality beyond bullet points
+        scoring:
+          0: Direct copy-paste of resume content
+          1: Heavy overlap with resume, minimal new content
+          2: Some repetition but attempts to add context
+          3: Good balance, adds narrative to resume facts
+          4: Strong complementary content, minimal overlap
+          5: Perfect complement, tells story resume can't
+
+      - name: Narrative Value
+        description: Provides story and motivation resume lacks
+        what_to_look_for:
+          - Explains career trajectory and choices
+          - Connects dots between experiences
+          - Shows why experiences matter for THIS role
+          - Provides context for resume facts
+          - Demonstrates self-awareness and intentionality
+        scoring:
+          0: No narrative, just resume summary
+          1: Minimal storytelling, mostly facts
+          2: Some narrative but disconnected
+          3: Good narrative connecting experiences
+          4: Strong narrative arc with clear motivation
+          5: Compelling story that makes resume more impactful
+
+  - name: Proofreading & Professional Polish
+    description: |
+      Meticulous attention to detail in writing.
+      81% of recruiters have rejected candidates for poor cover letters.
+      Writing quality improves hire rate by 8%.
+    weight: 10
+    max_points: 10
+    criteria:
+      - name: Spelling & Grammar
+        description: Free of mechanical errors
+        what_to_look_for:
+          - No spelling errors
+          - No grammatical errors
+          - Correct word usage
+          - Proper punctuation
+          - Subject-verb agreement
+        scoring:
+          0: Multiple errors, clearly not proofread
+          1: Several errors present
+          2: 1-2 minor errors
+          3: No errors, clean writing
+          4: Polished, professional prose
+          5: Flawless, meticulous attention to detail
+
+      - name: Redundancy & Clarity
+        description: Concise without filler or repetition
+        what_to_look_for:
+          - No redundant phrases
+          - Every sentence adds value
+          - Clear, direct language
+          - No filler words
+          - Efficient use of word count
+        scoring:
+          0: Highly redundant, major clarity issues
+          1: Significant redundancy, wordy
+          2: Some redundancy or clarity issues
+          3: Generally concise and clear
+          4: Well-edited, no redundancy
+          5: Perfectly concise, every word counts
+
+      - name: Attention to Detail
+        description: Shows meticulousness in all aspects
+        what_to_look_for:
+          - Correct company/role names
+          - Proper names spelled correctly
+          - Consistent formatting
+          - Appropriate formality
+          - Correct facts and claims
+        scoring:
+          0: Obvious errors showing lack of care
+          1: Multiple detail errors
+          2: Minor detail issues
+          3: Good attention to detail
+          4: Strong attention to all details
+          5: Meticulous, zero errors, perfect execution
+
+closing_and_cta:
+  description: |
+    Final paragraph and call-to-action quality.
+    
+  criteria:
+    - name: Clear Call-to-Action
+      description: Professional closing with next steps
+      what_to_look_for:
+        - Clear statement of interest
+        - Professional call-to-action (interview request)
+        - Availability indication
+        - Contact information reminder
+        - No desperate or pushy language
+      scoring:
+        0: No closing or inappropriate closing
+        1: Weak closing, no call-to-action
+        2: Adequate closing but generic
+        3: Good closing with clear next steps
+        4: Strong closing, professional CTA
+        5: Excellent closing, compelling yet professional
+
+    - name: Professional Tone Maintenance
+      description: Maintains professional tone throughout ending
+      what_to_look_for:
+        - No desperation ("I really need this job")
+        - No arrogance ("You'd be lucky to hire me")
+        - Appropriate confidence
+        - Gratitude expressed professionally
+        - Leaves positive final impression
+      scoring:
+        0: Unprofessional, inappropriate tone
+        1: Tone issues in closing
+        2: Generally appropriate but could improve
+        3: Good professional tone
+        4: Strong, confident, professional closing
+        5: Perfect balance of confidence and gratitude
+
+gendered_language:
+  description: |
+    Research-based guidance on language authenticity.
+    
+    IMPORTANT: Inauthentic voice gets penalized regardless of direction.
+    The research shows that women who deliberately use less feminine wording
+    in male-dominant jobs are LESS likely to be hired - the strategy backfires.
+    
+    Key insight: Authenticity matters more than language pattern matching.
+    
+  guidance: |
+    DO score based on authenticity and specificity of voice.
+    
+    DO NOT penalize natural language patterns (whether masculine-coded, 
+    feminine-coded, or neutral).
+    
+    DO penalize:
+    - Generic, inauthentic writing regardless of language patterns
+    - Forced or unnatural formality/informality
+    - Language that seems coached or manipulated
+    - Template-like quality that could apply to anyone
+    
+    DO reward:
+    - Authentic individual voice (regardless of gender coding)
+    - Specific personal details that show genuine perspective
+    - Natural communication style
+    - Genuine enthusiasm that feels real, not performed
+    
+  scoring_integration: |
+    This consideration should be integrated into:
+    - "Personality & Tone" scoring (under Communication)
+    - "Non-Redundant Content" scoring (under Unique Value vs Resume)
+    - NOT scored as a separate category
+
+red_flags:
+  description: |
+    Issues that warrant significant scoring penalties or immediate rejection.
+    
+  critical_rejections:
+    - description: Wrong company name or role
+      impact: Automatic rejection
+      notes: Shows lack of care, generic application
+      
+    - description: Placeholder text still visible
+      impact: Automatic rejection
+      notes: "[Company Name]" or similar still in text
+      
+    - description: Excessive length (>600 words)
+      impact: -15 points
+      notes: Shows inability to communicate concisely, risks skimming
+      
+    - description: Gross errors (spelling, grammar)
+      impact: -10 to -20 points
+      notes: Multiple errors signal poor communication skills and care
+      
+  significant_penalties:
+    - description: Generic letter applicable to any company
+      impact: -15 points
+      notes: Could swap company name without anyone noticing
+      
+    - description: No connection to job description
+      impact: -10 points
+      notes: Letter doesn't reference any specific requirements
+      
+    - description: Inappropriate tone
+      impact: -10 points
+      notes: Overly casual, desperate, arrogant, or unprofessional
+      
+    - description: Buries relevant experience
+      impact: -10 points
+      notes: Experience mentioned late or not prioritized
+      
+    - description: Heavy resume overlap
+      impact: -5 points
+      notes: Simply restates resume without adding narrative value
+      
+  moderate_penalties:
+    - description: Too brief (<200 words)
+      impact: -5 points
+      notes: Signals low effort, incomplete thought
+      
+    - description: Generic opening paragraph
+      impact: -3 points
+      notes: "I am writing to apply for..." without hook
+      
+    - description: Lists responsibilities without impact
+      impact: -3 points
+      notes: Describes job duties, not achievements
+      
+    - description: No specific company research
+      impact: -5 points
+      notes: Generic "I admire your company" language only
+
+best_practices:
+  excellent_examples:
+    opening_paragraph:
+      - "The [Specific Role] at [Company] caught my attention because [specific reason tied to company mission/product/challenge]. With [X years] of [relevant experience] and [specific achievement], I see an opportunity to [specific contribution you can make]."
+      - "When I read about [specific company initiative/challenge], I knew I had to apply. My experience [specific relevant experience] directly aligns with [specific role requirement] and I'm excited about [genuine specific reason]."
+      
+    middle_paragraph:
+      - "At [Company], I [specific achievement] resulting in [quantitative outcome]. This experience taught me [specific skill or insight] that I'm eager to apply to [specific challenge at target company]."
+      - "I've spent [time] working on [relevant domain], most recently [specific project] where I [specific action] and achieved [specific result]. I see similar opportunities at [Company] in [specific area]."
+      
+    connection_example:
+      - "After speaking with [Name, Title] about [specific topic], I was excited to learn more about [specific opportunity]. Their insights about [specific aspect of role/company] confirmed my interest in [specific why]."
+      - "As a [user/customer/someone impacted by company's work], I've seen firsthand how [specific company product/initiative] achieves [specific outcome]. This experience gives me unique insight into [specific value you can add]."
+      
+    closing_paragraph:
+      - "I'm excited about the possibility of contributing to [specific team/project] and would welcome the opportunity to discuss how my experience with [specific skill] could support [specific company goal]. I'm available [availability] and can be reached at [contact info]."
+      
+score_comparison:
+    score_85_to_100:
+      label: Outstanding
+      characteristics:
+        - "Highly personalized to role and company"
+        - "Strong relevant experience highlighted early"
+        - "3+ specific achievements with metrics"
+        - "Authentic voice, compelling narrative"
+        - "Complements resume with story"
+        - "Optimal length (250-400 words)"
+        - "Deep research into opportunity"
+      evidence: "Would immediately stand out in recruiter's pile"
+      
+    score_70_to_84:
+      label: Strong
+      characteristics:
+        - "Clearly tailored to specific role"
+        - "Good experience alignment"
+        - "1-2 quantified achievements"
+        - "Professional, authentic writing"
+        - "Adds narrative to resume facts"
+        - "Keyword alignment present"
+        - "Appropriate length and format"
+      evidence: "Would make strong impression, competitive candidate"
+      
+    score_55_to_69:
+      label: Adequate
+      characteristics:
+        - "Meets basic expectations"
+        - "Some tailoring evident"
+        - "Professional writing"
+        - "Relevant experience mentioned"
+        - "Some overlap with resume"
+        - "Minor issues acceptable"
+      evidence: "Would not be rejected for cover letter, but not memorable"
+      
+    score_40_to_54:
+      label: Weak
+      characteristics:
+        - "Minimal personalization"
+        - "Generic or template-like"
+        - "No quantified achievements"
+        - "Weak experience connection"
+        - "Heavy resume overlap"
+        - "Missing key elements"
+      evidence: "Would raise concerns, may hurt candidacy"
+      
+    score_0_to_39:
+      label: Poor
+      characteristics:
+        - "Critical errors or red flags"
+        - "No personalization"
+        - "Poor writing or inappropriate tone"
+        - "Just repeats resume"
+        - "Wrong company name"
+      evidence: "Would likely lead to rejection (81% of recruiters reject for poor letters)"
+
+ai_usage_guidance:
+  description: |
+    Note: AI detection scoring has been removed from this scoring sheet.
+    This rubric focuses on content quality and research-backed signals.
+    
+    For applicants using AI tools, the key principle is:
+    - Use AI for editing, grammar, and formatting assistance
+    - Write the core narrative and personal details yourself
+    - Ensure your authentic voice comes through
+    
+    If the letter shows:
+    - Generic language without personal details
+    - Could apply to any candidate
+    - No specific anecdotes or insights
+    These will be penalized under other domains (Textual Similarity, Unique Value,
+    Personality & Tone) rather than under a separate "AI detection" category.
+
+evaluation_process:
+  step_by_step:
+    - order: 1
+      name: Critical Failure Check
+      description: "Check for automatic rejection triggers (wrong company, placeholders, gross errors)"
+      
+    - order: 2
+      name: Personalization Assessment
+      description: "Is this clearly written for THIS role at THIS company? (Could it be swapped?)"
+      
+    - order: 3
+      name: Experience Relevance
+      description: "Is relevant experience highlighted early? Connected to role requirements?"
+      
+    - order: 4
+      name: AI Detection
+      description: "Does this sound human and specific, or AI-generated and generic?"
+      
+    - order: 5
+      name: Writing Quality
+      description: "Professional, clear, error-free? Appropriate length?"
+      
+    - order: 6
+      name: Overall Impression
+      description: "Would this make a recruiter want to read the resume?"
+
+  quick_assessment:
+    questions_to_ask:
+      - "Could this letter be sent to a different company with minimal edits?"
+        - "Yes = penalize heavily for lack of personalization"
+        
+      - "Does the first paragraph capture attention and state value proposition?"
+        - "No = likely won't be read closely"
+        
+      - "Is relevant experience mentioned in first or second paragraph?"
+        - "No = fails to prioritize what recruiters care most about"
+        
+      - "Does the letter simply repeat the resume?"
+        - "Yes = penalize for lack of narrative value"
+        
+      - "Does the letter simply repeat the resume?"
+        - "Yes = penalize for lack of narrative value"
+        
+      - "Is there even one spelling or grammar error?"
+        - "Yes = 81% of recruiters have rejected for this"
+
+metrics_definitions:
+  description: |
+    Concrete definitions for key metrics mentioned in research.
+    Use these thresholds for consistent qualitative evaluation.
+    
+  word_count:
+    optimal: "250-400 words"
+    acceptable: "200-249 or 401-450 words"
+    problematic: "< 200 words (too brief) or > 500 words (excessive)"
+    research_basis: "~250-400 words rated as 'perfect' by nearly half of recruiters"
+    
+  quantified_achievements:
+    excellent: "3+ distinct achievements with specific metrics"
+    good: "2 achievements with metrics"
+    adequate: "1 achievement with metrics"
+    poor: "No quantified achievements"
+    examples:
+      - "Reduced page load time by 40%"
+      - "Managed team of 12 engineers"
+      - "Generated $150K in annual savings"
+      - "Improved conversion rate from 2.3% to 4.7%"
+    research_basis: "Only 4% explicitly look for metrics, but when present they dramatically improve persuasion"
+    
+  experience_priority:
+    excellent: "Relevant experience in first paragraph with specific fit"
+    good: "Relevant experience in first or second paragraph"
+    adequate: "Relevant experience mentioned but late"
+    poor: "Experience buried or not prioritized"
+    research_basis: "27% of recruiters prioritize relevant experience - highest ranked factor"
+    
+  personalization_depth:
+    excellent: "Cannot be swapped with another company without being noticed"
+    good: "Specific references to company, role, and requirements"
+    adequate: "Some tailoring but could apply to similar companies"
+    poor: "Generic or template-like"
+    test: "Swap test: Could this letter work for a different company with minimal changes?"
+    
+  keyword_overlap:
+    excellent: "Natural integration of all major JD keywords"
+    good: "Strong alignment with key terminology from posting"
+    adequate: "Some keyword use but could be stronger"
+    poor: "Little to no keyword alignment"
+    research_basis: "2% look for keywords explicitly, but helps ATS and recruiter scanning"
+    
+  narrative_value:
+    excellent: "Tells compelling story that makes resume more impactful"
+    good: "Adds context and motivation to resume facts"
+    adequate: "Some narrative but overlaps with resume"
+    poor: "Simply restates resume content"
+    test: "Resume comparison: Does the letter add value beyond the resume's bullet points?"
+    
+  referral_mention:
+    present: "Named employee or specific connection mentioned"
+    generic: "Weak connection claim ('I've heard of your company')"
+    absent: "No referral mentioned"
+    scoring_note: "19% look for this - it's a bonus, not a penalty if missing"
+    research_basis: "Personal connection reduces search cost for recruiter"
+        
+      - "Does the letter use key terminology from the job description?"
+        - "No = missing easy keyword alignment points"
+
+metadata:
+  created_for: "Evaluating cover letters for modern job applications (2026)"
+  research_basis:
+    - "Zety 2025 survey of 753 recruiters"
+    - "Field experiments with ~½ million job-seekers"
+    - "Algorithmic analysis of textual similarity and AI detection"
+  total_possible_points: 100
+  passing_score: 55
+  strong_score: 70
+  excellent_score: 85
+  last_updated: "2026-03-08"
+  
+scoring_interpretation:
+  85-100:
+    label: Outstanding
+    description: Would stand out in recruiter's pile
+    characteristics:
+      - "Highly personalized to specific role and company"
+      - "Strong relevant experience highlighted early"
+      - "3+ specific achievements with metrics"
+      - "Authentic voice, clearly genuine"
+      - "Complements resume with narrative value"
+      - "Optimal length (250-400 words), flawless execution"
+      - "Demonstrates deep research and genuine interest"
+    recommendation: "Strong positive signal, this candidate understands how to communicate professionally"
+    
+  70-84:
+    label: Strong
+    description: Would make positive impression
+    characteristics:
+      - "Clearly tailored to role and company"
+      - "Good experience alignment"
+      - "1-2 quantified achievements"
+      - "Professional, authentic writing"
+      - "Adds narrative to resume"
+      - "Appropriate length and format"
+      - "Evidence of research"
+    recommendation: "Solid professional communication, candidate is serious about this application"
+    
+  55-69:
+    label: Adequate
+    description: Meets basic expectations
+    characteristics:
+      - "Meets minimum requirements"
+      - "Some personalization evident"
+      - "Professional writing"
+      - "Relevant experience mentioned"
+      - "Some resume overlap but adds context"
+      - "Minor weaknesses acceptable"
+    recommendation: "Not a rejection reason, but not memorable either"
+    
+  40-54:
+    label: Weak
+    description: Would raise concerns
+    characteristics:
+      - "Minimal personalization"
+      - "Generic or template-like"
+      - "No quantified achievements"
+      - "Some errors or issues"
+      - "Weak experience connection"
+      - "Heavy resume overlap"
+    recommendation: "Cover letter hurts application, suggests low effort or poor communication"
+    
+  0-39:
+    label: Poor
+    description: Would likely lead to rejection
+    characteristics:
+      - "Critical errors or red flags"
+      - "No personalization"
+      - "Poor writing or inappropriate tone"
+      - "Just repeats resume content"
+      - "No quantified achievements"
+      - "Wrong company name or role"
+    recommendation: "Reject based on cover letter quality alone - 81% of recruiters have done this"
