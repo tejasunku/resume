@@ -6,3 +6,7 @@ private_copy/
 !/private/.gitrepo
 !/targeted/.gitkeep
 !/targeted/.gitrepo
+
+# Dolt database files (added by bd init)
+.dolt/
+*.db
