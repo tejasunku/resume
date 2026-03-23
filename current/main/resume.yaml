@@ -3,19 +3,20 @@ location: Redmond, WA (US Citizen, relocation ok)
 phone: "+1 (206) 445-3399"
 email: sunkut@outlook.com
 linkedin:
-    text: /in/tejasunku
-    url: https://www.linkedin.com/in/tejasunku
+  text: /in/tejasunku
+  url: https://www.linkedin.com/in/tejasunku
 
 summary: |
   Experienced AI Infrastructure Engineer with strong proficiency in Python and AWS, led the migration of a core LLM routing service to async architecture, enhancing performance. Managed the transition to Kubernetes for improved service orchestration. Combines data science expertise with production infrastructure experience to build scalable AI systems.
 
 experience:
-  - company: Tumble (trytumble.app)
+  - company: Tumble (trytumble.app) —  AI-powered task breakdown tool
     dates: 2025 - Present
-    title: Co-Founder & Tech Lead
+    title: Full-Stack Developer, AI/ML Engineer, Cloud Architect
     achievements:
-      - Built consumer planner app from scratch as technical cofounder, owning full-stack development with TypeScript, Next.js, and React patterns
-      - Led all architectural decisions including app structure, state management, and deployment pipeline
+      - Built consumer planner web app from scratch using TypeScript, Next.js, and React patterns
+      - Developed AI integration layer for automated task decomposition
+      - Managed cloud infrastructure and deployment pipeline
       - Conducted user testing with early adopters to inform product direction, progressing from concept to MVP in 4 months
 
   - company: Ashvin AI
