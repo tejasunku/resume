@@ -11,7 +11,7 @@ summary: |
 
 experience:
   - company: Ashvin AI
-    dates: Jan 2024 - Jun 2025
+    dates: 2024 - 2025
     title: ML Infrastructure Engineer
     achievements:
       - Migrated backend services to containerized Kubernetes architecture, reducing deployment time from 1 week to 1 day per service through standardized FastAPI microservices
@@ -21,14 +21,14 @@ experience:
       - Developed PostgreSQL-based backend APIs and custom Kubernetes metrics to improve autoscaling reliability
 
   - company: Tumble (trytumble.app)
-    dates: Oct 2025 - Present
-    title: Co-Founder & Tech Lead (Personal Project)
+    dates: 2025 - Present
+    title: Technical Lead
     achievements:
       - Led architectural decisions for consumer app including backend structure, deployment pipeline, and infrastructure design
       - Conducted user testing with early adopters to inform product direction, progressing from concept to MVP in 4 months
 
   - company: Cyentia Institute
-    dates: Apr 2022 - Jan 2023
+    dates: 2022 - 2023
     title: Data Scientist
     achievements:
       - Analyzed datasets of 1M+ rows to derive actionable insights and generate reports, collaborating with stakeholders to tailor visualizations
