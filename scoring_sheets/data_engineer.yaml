@@ -1,0 +1,216 @@
+name: Data Engineer
+version: 1.0.0
+purpose: >
+  Evaluates resumes for data engineering roles, emphasizing pipeline architecture,
+  ETL/ELT processes, SQL expertise, data infrastructure tooling, and cloud data platforms.
+  Targets mid-level data engineering positions focused on building reliable, scalable
+  data systems.
+
+overview: |
+  This scoring sheet assesses fit for data engineering roles. The ideal candidate demonstrates:
+  - Strong SQL and data modeling skills
+  - Experience building and maintaining data pipelines
+  - Proficiency with orchestration tools (Airflow, Prefect, etc.)
+  - Cloud data platforms (Snowflake, BigQuery, Redshift)
+  - Python for data engineering (pandas, PySpark, etc.)
+  - Data warehouse design and dimensional modeling
+  - Streaming data experience (Kafka, Kinesis)
+  - DevOps practices for data systems (CI/CD, testing)
+
+  Heavy weighting on SQL & Data Modeling (25 points) and Pipeline Development (25 points)
+  with significant emphasis on Infrastructure & Orchestration (20 points).
+
+scoring_scale:
+  0: No evidence
+  1: Minimal mention (single keyword, passing reference)
+  2: Some exposure (course/project work, basic usage)
+  3: Working knowledge (professional use, standard applications)
+  4: Significant experience (multiple projects, production systems)
+  5: Expert-level (deep specialization, leadership, complex implementations)
+
+domains:
+  - name: SQL & Data Modeling
+    description: Database design, SQL proficiency, and data modeling techniques
+    weight: 25
+    max_points: 25
+    criteria:
+      - name: SQL Proficiency
+        description: Advanced SQL skills for data analysis and pipeline development
+        what_to_look_for:
+          - Complex joins, window functions, CTEs
+          - Query optimization and performance tuning
+          - DDL (CREATE, ALTER, DROP) and DML
+          - Stored procedures and functions
+          - Debugging and troubleshooting query issues
+        scoring:
+          0: No SQL experience
+          1: Basic SELECT/FROM/WHERE queries
+          2: Joins, aggregations, basic optimization
+          3: Advanced SQL, window functions, query tuning
+          4: Complex queries, performance optimization at scale
+          5: Expert-level SQL, architecture decisions
+
+      - name: Data Modeling
+        description: Designing data schemas and warehouse structures
+        what_to_look_for:
+          - Star/snowflake schema design
+          - Dimensional modeling (facts, dimensions)
+          - Normalization vs denormalization tradeoffs
+          - Slowly changing dimensions (SCD)
+          - Data vault or one-big-table patterns
+        scoring:
+          0: No data modeling experience
+          1: Basic table creation
+          2: Simple schema design
+          3: Production dimensional models
+          4: Complex warehouse design, multiple modeling approaches
+          5: Data modeling leadership, methodology expertise
+
+  - name: Pipeline Development
+    description: Building and maintaining ETL/ELT data pipelines
+    weight: 25
+    max_points: 25
+    criteria:
+      - name: ETL/ELT Architecture
+        description: Designing and implementing data extraction, transformation, and loading
+        what_to_look_for:
+          - Source connectors (APIs, databases, file systems)
+          - Transformation logic and data quality
+          - Incremental vs full loads
+          - Backfill and historical data handling
+          - Data validation and error handling
+        scoring:
+          0: No ETL experience
+          1: Basic data copying
+          2: Simple transformations, batch loads
+          3: Production ETL pipelines
+          4: Complex pipelines, multiple sources
+          5: ETL architecture leadership
+
+      - name: Data Tooling
+        description: Experience with modern data transformation tools
+        what_to_look_for:
+          - dbt (data build tool) for SQL transformations
+          - Great Expectations or similar for data testing
+          - Data quality monitoring
+          - Reverse ETL tools
+        scoring:
+          0: No data tooling experience
+          1: Manual data processing
+          2: Basic script-based transformations
+          3: dbt or similar tooling in production
+          4: Advanced dbt (macros, incremental models)
+          5: Data tool architecture, custom solutions
+
+  - name: Infrastructure & Orchestration
+    description: Pipeline orchestration, scheduling, and data infrastructure
+    weight: 20
+    max_points: 20
+    criteria:
+      - name: Workflow Orchestration
+        description: Orchestrating complex data workflows
+        what_to_look_for:
+          - Apache Airflow, Prefect, Dagster
+          - Task dependencies and DAG design
+          - Trigger conditions and scheduling
+          - Error handling and retry strategies
+          - Monitoring and alerting
+        scoring:
+          0: No orchestration experience
+          1: Manual pipeline execution
+          2: Basic scheduled scripts
+          3: Production Airflow/equivalent setup
+          4: Complex DAGs, advanced patterns
+          5: Orchestration architecture leadership
+
+      - name: Data Infrastructure
+        description: Infrastructure for data systems (compute, storage, networking)
+        what_to_look_for:
+          - Spark, Databricks, EMR for large-scale processing
+          - Distributed computing concepts
+          - Storage formats (Parquet, Delta Lake, Iceberg)
+          - Data lake vs data warehouse tradeoffs
+        scoring:
+          0: No data infrastructure experience
+          1: Single-node processing
+          2: Basic distributed concepts
+          3: Production Spark or equivalent
+          4: Complex distributed systems
+          5: Infrastructure architecture leadership
+
+  - name: Cloud Data Platforms
+    description: Cloud data warehouses and platforms
+    weight: 15
+    max_points: 15
+    criteria:
+      - name: Cloud Data Warehouse
+        description: Experience with cloud data platforms
+        what_to_look_for:
+          - Snowflake, BigQuery, Redshift, Synapse
+          - Compute and storage separation
+          - Data sharing and cloning
+          - Performance tuning (clustering, partitioning)
+          - Cost optimization
+        scoring:
+          0: No cloud data platform experience
+          1: Basic database exposure
+          2: One cloud data platform
+          3: Production use of a cloud data warehouse
+          4: Multi-platform, advanced optimization
+          5: Cloud data platform architecture
+
+      - name: Cloud Services
+        description: General cloud infrastructure (AWS/GCP/Azure)
+        what_to_look_for:
+          - S3, GCS, Blob storage
+          - IAM and security best practices
+          - Networking basics (VPCs, private endpoints)
+          - Cost management
+        scoring:
+          0: No cloud experience
+          1: Basic cloud storage
+          2: Standard cloud services
+          3: Production cloud data architecture
+          4: Complex multi-service architectures
+          5: Cloud architecture leadership
+
+  - name: Python for Data Engineering
+    description: Python skills specifically for data engineering
+    weight: 10
+    max_points: 10
+    criteria:
+      - name: Data Engineering Python
+        description: Python libraries and patterns for data work
+        what_to_look_for:
+          - pandas, numpy for data manipulation
+          - PySpark for distributed processing
+          - Database connectors (psycopg2, SQLAlchemy)
+          - API clients and web scraping
+          - Scripting and automation
+        scoring:
+          0: No Python experience
+          1: Basic Python syntax
+          2: Simple data scripts
+          3: Production pandas/PySpark
+          4: Complex distributed Python
+          5: Python data architecture
+
+  - name: Streaming & Real-time
+    description: Real-time data processing and streaming systems
+    weight: 5
+    max_points: 5
+    criteria:
+      - name: Streaming Data Systems
+        description: Real-time data pipeline experience
+        what_to_look_for:
+          - Kafka, Kinesis, Pub/Sub
+          - Flink, Spark Streaming
+          - Event-driven architectures
+          - Exactly-once processing semantics
+        scoring:
+          0: No streaming experience
+          1: Basic queue understanding
+          2: Simple streaming setup
+          3: Production streaming pipelines
+          4: Complex streaming architectures
+          5: Streaming platform leadership

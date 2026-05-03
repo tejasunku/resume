@@ -1,0 +1,54 @@
+name: Teja Sunku
+location: Redmond, WA (US Citizen, relocation ok)
+phone: "+1 206 445 3399"
+email: sunkut@outlook.com
+linkedin:
+    text: /in/tejasunku
+    url: https://www.linkedin.com/in/tejasunku
+
+summary: |
+  Data engineer with experience building scalable data pipelines, workflow orchestration, and cloud infrastructure. Proficient in Python and SQL with a track record of migrating legacy systems to containerized architectures, designing reliable data ingestion pipelines for complex medical data formats, and optimizing CI/CD processes for faster deployments. Background in data science and statistical analysis.
+
+experience:
+  - company: Ashvin AI
+    dates: Jan 2024 - Jun 2025
+    title: ML Infrastructure Engineer
+    achievements:
+      - Migrated backend services to containerized Kubernetes architecture, reducing deployment time from 1 week to 1 day per service through standardized FastAPI microservices
+      - Designed multi-repo integration test suite for cross-service dependencies, cutting release-time regressions by 50% and improving deployment reliability
+      - Built resilient data ingestion pipelines for medical systems (Brightree, HDMS, TIMS), normalizing untyped legacy data into structured formats and covering 80%+ of prospective partners
+      - Unified Engineering and DevOps CI/CD pipelines, cutting container build-to-deploy latency by 70% through caching and parallelization
+      - Developed PostgreSQL-based backend APIs and custom Kubernetes metrics to improve autoscaling reliability
+
+  - company: Tumble (trytumble.app)
+    dates: Oct 2025 - Present
+    title: Co-Founder & Tech Lead (Personal Project)
+    achievements:
+      - Led architectural decisions for consumer app including backend structure, deployment pipeline, and infrastructure design
+      - Conducted user testing with early adopters to inform product direction, progressing from concept to MVP in 4 months
+
+  - company: Cyentia Institute
+    dates: Apr 2022 - Jan 2023
+    title: Data Scientist
+    achievements:
+      - Analyzed datasets of 1M+ rows to derive actionable insights and generate reports, collaborating with stakeholders to tailor visualizations
+      - Built NLP pipelines using SpaCy and BERT models to augment security data feeds with key words and phrases, improving data accuracy
+      - Automated data extraction from websites and APIs, exporting structured tabular formats to AWS for analyst workflows
+      - Created Docker-based testing environments and AWS configurations for pre-production validation, enabling reproducible deployments
+
+education:
+  - school: University of Idaho
+    dates: 2017 - 2021
+    degree: B.S., Statistics & Philosophy, Minor in Computer Science (Graduating Senior of the Year, College of Science)
+
+skills:
+  - label: Languages
+    items: Python, SQL (Postgres), Bash
+  - label: Data Engineering
+    items: Databricks (ELT/pipelines), Temporal (workflow orchestration), pandas, NumPy, Spark
+  - label: Cloud & Infrastructure
+    items: AWS, GCP, Docker, Kubernetes, Terraform, GitHub Actions, Datadog
+  - label: Backend & APIs
+    items: FastAPI, REST APIs
+  - label: Databases & Storage
+    items: PostgreSQL, MongoDB, Redis, Elasticsearch
